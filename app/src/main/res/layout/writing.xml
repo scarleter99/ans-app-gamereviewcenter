@@ -143,6 +143,7 @@
                 android:layout_alignBottom="@id/editTextTextPersonName4"
                 android:text="취소"
                 android:textColor="@color/Text" />
+
         </RelativeLayout>
 
         <LinearLayout
