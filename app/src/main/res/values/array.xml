@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="my_array">
+        <item>PC</item>
+        <item>모바일</item>
+        <item>닌텐도</item>
+        <item>플레이스테이션</item>
+        <item>엑스박스</item>
+        <item>기타</item>
+    </string-array>
+</resources>
