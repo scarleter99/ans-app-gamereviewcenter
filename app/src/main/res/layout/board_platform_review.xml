@@ -176,7 +176,6 @@
             android:layout_height="100dp"
             android:layout_weight="1"
             android:text="게시판"
-            android:textColor="@colors/bottomText"
             android:textSize="25dp" />
 
         <Button
@@ -185,7 +184,6 @@
             android:layout_height="100dp"
             android:layout_weight="1"
             android:text="글쓰기"
-            android:textColor="@colors/bottomText"
             android:textSize="25dp" />
 
         <Button
@@ -194,7 +192,6 @@
             android:layout_height="100dp"
             android:layout_weight="1"
             android:text="내정보"
-            android:textColor="@colors/bottomText"
             android:textSize="25dp" />
     </LinearLayout>
 

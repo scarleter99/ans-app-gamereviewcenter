@@ -5,28 +5,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
+    android:gravity="center"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/TV_signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="68dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="88dp"
         android:text="회원가입"
         android:textColor="#FFD966"
         android:textSize="34sp" />
 
     <EditText
         android:id="@+id/ET_inputid"
-        android:layout_width="wrap_content"
+        android:layout_width="200sp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/TV_signup"
         android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="103dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="107dp"
+        android:layout_marginTop="61dp"
+        android:layout_marginEnd="104dp"
         android:ems="10"
         android:hint="아이디"
         android:inputType="textPersonName"
@@ -34,13 +39,15 @@
 
     <EditText
         android:id="@+id/ET_inputpassword"
-        android:layout_width="wrap_content"
+        android:layout_width="200sp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/TV_idcheck"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="-7dp"
-        android:layout_marginEnd="99dp"
+        android:layout_marginStart="107dp"
+        android:layout_marginTop="263dp"
+        android:layout_marginEnd="104dp"
         android:ems="10"
         android:hint="비밀번호"
         android:inputType="textPersonName|textPassword"
@@ -50,21 +57,23 @@
         android:id="@+id/BTN_signup"
         android:layout_width="800px"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ET_email"
         android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="54dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginBottom="86dp"
         android:backgroundTint="#60CBF6 "
         android:text="@string/BTN_signup" />
 
     <EditText
         android:id="@+id/ET_repassword"
-        android:layout_width="wrap_content"
+        android:layout_width="200sp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ET_inputpassword"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="11dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="333dp"
+        android:layout_marginEnd="104dp"
         android:ems="10"
         android:hint="비밀번호 확인"
         android:inputType="textPersonName"
@@ -72,13 +81,13 @@
 
     <EditText
         android:id="@+id/ET_nickname"
-        android:layout_width="wrap_content"
+        android:layout_width="200sp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ET_repassword"
         android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="34dp"
+        android:layout_marginStart="107dp"
+        android:layout_marginBottom="264dp"
         android:ems="10"
         android:hint="닉네임"
         android:inputType="textPersonName"
@@ -86,36 +95,16 @@
 
     <EditText
         android:id="@+id/ET_email"
-        android:layout_width="wrap_content"
+        android:layout_width="200sp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/TV_namecheck"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="101dp"
+        android:layout_marginEnd="104dp"
+        android:layout_marginBottom="191dp"
         android:ems="10"
         android:hint="이메일"
         android:inputType="textPersonName"
         android:minHeight="48dp" />
-
-    <TextView
-        android:id="@+id/TV_namecheck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ET_nickname"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="103dp"
-        android:layout_marginTop="-3dp"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/TV_idcheck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ET_inputid"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="106dp"
-        android:layout_marginTop="-2dp"
-        android:text="TextView" />
 
 </RelativeLayout>

@@ -22,8 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="4"
-                android:text="플랫폼"
-                android:textColor="@colors/Text" />
+                android:text="플랫폼" />
 
             <Spinner
                 android:id="@+id/spinner"
@@ -44,8 +43,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="4"
-                android:text="제목"
-                android:textColor="@colors/Text" />
+                android:text="제목" />
 
             <EditText
                 android:id="@+id/editTextTextPersonName3"
@@ -69,8 +67,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="4"
-                android:text="게임명"
-                android:textColor="@colors/Text" />
+                android:text="게임명" />
 
             <EditText
                 android:id="@+id/editTextTextPersonName2"
@@ -93,8 +90,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="플레이타임"
-                android:textColor="@colors/Text" />
+                android:text="플레이타임" />
 
             <ImageView
                 android:id="@+id/imageView3"
@@ -148,8 +144,7 @@
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/editTextTextPersonName4"
                 android:layout_alignBottom="@id/editTextTextPersonName4"
-                android:text="취소"
-                android:textColor="@colors/Text" />
+                android:text="취소" />
 
         </RelativeLayout>
 
@@ -162,8 +157,7 @@
                 android:id="@+id/button10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="작성 완료"
-                android:textColor="@colors/Text" />
+                android:text="작성 완료" />
 
         </LinearLayout>
 
@@ -182,8 +176,7 @@
             android:layout_height="100dp"
             android:layout_weight="1"
             android:text="게시판"
-            android:textSize="25dp"
-            android:textColor="@colors/bottomText"/>
+            android:textSize="25dp"/>
 
         <Button
             android:id="@+id/writingButton"
@@ -191,8 +184,7 @@
             android:layout_height="100dp"
             android:layout_weight="1"
             android:text="글쓰기"
-            android:textSize="25dp"
-            android:textColor="@colors/bottomText"/>
+            android:textSize="25dp"/>
 
         <Button
             android:id="@+id/mypageButton"
@@ -200,8 +192,7 @@
             android:layout_height="100dp"
             android:layout_weight="1"
             android:text="내정보"
-            android:textSize="25dp"
-            android:textColor="@colors/bottomText"/>
+            android:textSize="25dp"/>
     </LinearLayout>
 
 </RelativeLayout>
