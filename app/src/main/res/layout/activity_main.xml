@@ -46,7 +46,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:backgroundTint="#FFD966"
-        android:text="@string/btn_login" />
+        android:text="@string/btn_login"
+        android:textColor="#FFFFFF" />
 
     <TextView
         android:id="@+id/TV_signup"
