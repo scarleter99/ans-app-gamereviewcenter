@@ -23,7 +23,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="4"
                 android:text="플랫폼"
-                android:textColor="@color/Text" />
+                android:textColor="@colors/Text" />
 
             <Spinner
                 android:id="@+id/spinner"
@@ -45,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="4"
                 android:text="제목"
-                android:textColor="@color/Text" />
+                android:textColor="@colors/Text" />
 
             <EditText
                 android:id="@+id/editTextTextPersonName3"
@@ -70,7 +70,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="4"
                 android:text="게임명"
-                android:textColor="@color/Text" />
+                android:textColor="@colors/Text" />
 
             <EditText
                 android:id="@+id/editTextTextPersonName2"
@@ -94,7 +94,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="플레이타임"
-                android:textColor="@color/Text" />
+                android:textColor="@colors/Text" />
 
             <ImageView
                 android:id="@+id/imageView3"
@@ -149,7 +149,7 @@
                 android:layout_toRightOf="@id/editTextTextPersonName4"
                 android:layout_alignBottom="@id/editTextTextPersonName4"
                 android:text="취소"
-                android:textColor="@color/Text" />
+                android:textColor="@colors/Text" />
 
         </RelativeLayout>
 
@@ -163,7 +163,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="작성 완료"
-                android:textColor="@color/Text" />
+                android:textColor="@colors/Text" />
 
         </LinearLayout>
 
@@ -183,7 +183,7 @@
             android:layout_weight="1"
             android:text="게시판"
             android:textSize="25dp"
-            android:textColor="@color/bottomText"/>
+            android:textColor="@colors/bottomText"/>
 
         <Button
             android:id="@+id/writingButton"
@@ -192,7 +192,7 @@
             android:layout_weight="1"
             android:text="글쓰기"
             android:textSize="25dp"
-            android:textColor="@color/bottomText"/>
+            android:textColor="@colors/bottomText"/>
 
         <Button
             android:id="@+id/mypageButton"
@@ -201,7 +201,7 @@
             android:layout_weight="1"
             android:text="내정보"
             android:textSize="25dp"
-            android:textColor="@color/bottomText"/>
+            android:textColor="@colors/bottomText"/>
     </LinearLayout>
 
 </RelativeLayout>
