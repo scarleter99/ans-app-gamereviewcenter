@@ -16,7 +16,7 @@
             android:layout_height="100dp"
             android:layout_weight="1"
             android:text="게시판"
-            android:textColor="@color/bottomText"
+            android:textColor="@colors/bottomText"
             android:textSize="25dp" />
 
         <Button
@@ -25,7 +25,7 @@
             android:layout_height="100dp"
             android:layout_weight="1"
             android:text="글쓰기"
-            android:textColor="@color/bottomText"
+            android:textColor="@colors/bottomText"
             android:textSize="25dp" />
 
         <Button
@@ -34,7 +34,7 @@
             android:layout_height="100dp"
             android:layout_weight="1"
             android:text="내정보"
-            android:textColor="@color/bottomText"
+            android:textColor="@colors/bottomText"
             android:textSize="25dp" />
     </LinearLayout>
 
@@ -59,7 +59,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@color/bottomText"
+                android:background="@colors/bottomText"
                 android:text="     ID   : "
                 android:textAlignment="textEnd"
                 android:textColor="@color/black"
@@ -71,7 +71,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="7"
-                android:background="@color/bottomText"
+                android:background="@colors/bottomText"
                 android:text="ID표시"
                 android:textAlignment="center"
                 android:textColor="@color/black"
@@ -90,7 +90,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@color/bottomText"
+                android:background="@colors/bottomText"
                 android:text=" EMAIL : "
                 android:textAlignment="textEnd"
                 android:textColor="@color/black"
@@ -102,7 +102,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="7"
-                android:background="@color/bottomText"
+                android:background="@colors/bottomText"
                 android:text="EMAIL주소 표시"
                 android:textAlignment="center"
                 android:textColor="@color/black"
@@ -122,7 +122,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@color/bottomText"
+                android:background="@colors/bottomText"
                 android:text=" PHONE : "
                 android:textAlignment="textEnd"
                 android:textColor="@color/black"
@@ -134,7 +134,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="7"
-                android:background="@color/bottomText"
+                android:background="@colors/bottomText"
                 android:text="전화번호 표시"
                 android:textAlignment="center"
                 android:textColor="@color/black"
@@ -154,7 +154,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@color/bottomText"
+                android:background="@colors/bottomText"
                 android:text="  NAME : "
                 android:textAlignment="textEnd"
                 android:textColor="@color/black"
@@ -166,7 +166,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="7"
-                android:background="@color/bottomText"
+                android:background="@colors/bottomText"
                 android:text="이름 표시"
                 android:textAlignment="center"
                 android:textColor="@color/black"
@@ -183,7 +183,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="220dp"
-        android:background="@color/bottomText"
+        android:background="@colors/bottomText"
         android:text="확인"
         android:textSize="24dp" />
 
