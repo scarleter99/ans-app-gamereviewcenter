@@ -1,10 +1,12 @@
 <resources>
     <string name="app_name">teamproj_login</string>
-    <string name="btn_login">로그인</string>
+    <string name="BTN_login">로그인</string>
     <string name="TV_signup">회원가입</string>
     <string name="TV_signup_logo">회원가입</string>
     <string name="TV_appName">게임 리뷰 센터</string>
     <string name="BTN_signup">회원가입</string>
     <string name="ET_inputid">아이디</string>
     <string name="ET_inputpassword">비밀번호</string>
+    <string name="BTN_idcheck">중복 확인</string>
+    <string name="BTN_nicknamecheck">중복 확인</string>
 </resources>

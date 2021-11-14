@@ -51,18 +51,6 @@
         android:inputType="textPersonName|textPassword"
         android:minHeight="48dp" />
 
-    <Button
-        android:id="@+id/BTN_signup"
-        android:layout_width="800px"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ET_email"
-        android:layout_alignParentStart="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="54dp"
-        android:layout_marginTop="42dp"
-        android:backgroundTint="#60CBF6 "
-        android:text="@string/BTN_signup" />
-
     <EditText
         android:id="@+id/ET_repassword"
         android:layout_width="200sp"
@@ -104,5 +92,40 @@
         android:hint="이메일"
         android:inputType="textPersonName"
         android:minHeight="48dp" />
+
+    <Button
+        android:id="@+id/BTN_signup"
+        android:layout_width="800px"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ET_email"
+        android:layout_alignParentStart="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="42dp"
+        android:backgroundTint="#60CBF6 "
+        android:text="@string/BTN_signup"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/BTN_idcheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/ET_inputid"
+        android:layout_marginStart="209dp"
+        android:background="#B9E6F8"
+        android:text="@string/BTN_idcheck"
+        android:textColor="#FFFFFF"
+        android:translationY="230px" />
+
+    <Button
+        android:id="@+id/BTN_nicknamecheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/ET_nickname"
+        android:layout_marginStart="208dp"
+        android:background="#B9E6F8"
+        android:text="@string/BTN_nicknamecheck"
+        android:textColor="#FFFFFF"
+        android:translationY="830px" />
 
 </RelativeLayout>

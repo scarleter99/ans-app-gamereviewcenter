@@ -19,6 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".SignupPage"/>
+        <activity android:name=".Board"/>
     </application>
 
 </manifest>

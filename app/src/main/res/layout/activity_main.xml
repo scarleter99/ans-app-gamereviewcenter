@@ -39,21 +39,21 @@
         android:textColorHint="#FFFFFF" />
 
     <Button
-        android:id="@+id/btn_login"
+        android:id="@+id/BTN_login"
         android:layout_width="800px"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ET_inputpassword"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="27dp"
         android:backgroundTint="#FFD966"
-        android:text="@string/btn_login"
+        android:text="@string/BTN_login"
         android:textColor="#FFFFFF" />
 
     <TextView
         android:id="@+id/TV_signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_login"
+        android:layout_below="@+id/BTN_login"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="23dp"
