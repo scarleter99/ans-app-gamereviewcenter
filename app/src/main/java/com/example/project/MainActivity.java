@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         BTN_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Board.class);
+                Intent intent = new Intent(getApplicationContext(), MainActivity_Second.class);
                 startActivity(intent);
             }
         });

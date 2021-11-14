@@ -2,16 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
+        android:id="@+id/item_board"
         android:enabled="true"
         android:icon="@drawable/ic_pen"
         android:title="게시판"/>
 
     <item
+        android:id="@+id/item_writing"
         android:enabled="true"
         android:icon="@drawable/ic_pen"
         android:title="글쓰기"/>
 
     <item
+        android:id="@+id/item_mypage"
         android:enabled="true"
         android:icon="@drawable/ic_pen"
         android:title="내정보"/>

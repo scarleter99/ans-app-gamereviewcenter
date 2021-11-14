@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".SignupPage"/>
-        <activity android:name=".Board"/>
+        <activity android:name=".MainActivity_Second"/>
     </application>
 
 </manifest>

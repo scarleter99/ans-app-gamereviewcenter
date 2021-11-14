@@ -2,9 +2,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_board"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
+    android:background="#60CBF6"
     android:gravity="center"
     tools:context=".MainActivity">
 
@@ -16,7 +18,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="144dp"
         android:text="회원가입"
-        android:textColor="#FFD966"
+        android:textColor="#FFFFFF"
         android:textSize="34sp" />
 
     <EditText
@@ -25,15 +27,17 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/TV_signup"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_centerHorizontal="true"
         android:layout_marginStart="106dp"
         android:layout_marginTop="46dp"
-        android:layout_marginEnd="105dp"
+        android:backgroundTint="#FFFFFF"
         android:ems="10"
         android:hint="아이디"
         android:inputType="textPersonName"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textColorLink="#FFFFFF" />
 
     <EditText
         android:id="@+id/ET_inputpassword"
@@ -46,10 +50,15 @@
         android:layout_marginStart="107dp"
         android:layout_marginTop="21dp"
         android:layout_marginEnd="104dp"
+        android:backgroundTint="#FFFFFF"
         android:ems="10"
         android:hint="비밀번호"
         android:inputType="textPersonName|textPassword"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textColorLink="#FFFFFF" />
 
     <EditText
         android:id="@+id/ET_repassword"
@@ -60,10 +69,15 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="22dp"
         android:layout_marginEnd="104dp"
+        android:backgroundTint="#FFFFFF"
         android:ems="10"
         android:hint="비밀번호 확인"
         android:inputType="textPersonName"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textColorLink="#FFFFFF" />
 
     <EditText
         android:id="@+id/ET_nickname"
@@ -74,10 +88,15 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="107dp"
         android:layout_marginTop="38dp"
+        android:backgroundTint="#FFFFFF"
         android:ems="10"
         android:hint="닉네임"
         android:inputType="textPersonName"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textColorLink="#FFFFFF" />
 
     <EditText
         android:id="@+id/ET_email"
@@ -88,10 +107,15 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="26dp"
         android:layout_marginEnd="104dp"
+        android:backgroundTint="#FFFFFF"
         android:ems="10"
         android:hint="이메일"
         android:inputType="textPersonName"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textColorLink="#FFFFFF" />
 
     <Button
         android:id="@+id/BTN_signup"
@@ -102,7 +126,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="54dp"
         android:layout_marginTop="42dp"
-        android:backgroundTint="#60CBF6 "
+        android:backgroundTint="#FFD966"
         android:text="@string/BTN_signup"
         android:textColor="#FFFFFF" />
 
@@ -110,22 +134,28 @@
         android:id="@+id/BTN_idcheck"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/ET_inputid"
-        android:layout_marginStart="209dp"
+        android:layout_below="@+id/TV_signup"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="7dp"
+        android:layout_toEndOf="@+id/ET_inputid"
         android:background="#B9E6F8"
         android:text="@string/BTN_idcheck"
-        android:textColor="#FFFFFF"
-        android:translationY="230px" />
+        android:textColor="#FFFFFF" />
 
     <Button
         android:id="@+id/BTN_nicknamecheck"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/ET_nickname"
-        android:layout_marginStart="208dp"
+        android:layout_below="@+id/ET_repassword"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="7dp"
+        android:layout_toEndOf="@+id/ET_nickname"
         android:background="#B9E6F8"
         android:text="@string/BTN_nicknamecheck"
-        android:textColor="#FFFFFF"
-        android:translationY="830px" />
+        android:textColor="#FFFFFF" />
 
 </RelativeLayout>
