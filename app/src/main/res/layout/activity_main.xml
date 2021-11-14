@@ -40,7 +40,7 @@
 
     <Button
         android:id="@+id/BTN_login"
-        android:layout_width="800px"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ET_inputpassword"
         android:layout_centerHorizontal="true"
@@ -72,5 +72,12 @@
         android:layout_marginStart="131dp"
         android:layout_marginTop="52dp"
         app:srcCompat="@drawable/logo" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottom_nav"
+        app:itemBackground="@android:color/white"/>
 
 </RelativeLayout>
