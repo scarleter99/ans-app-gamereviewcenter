@@ -8,14 +8,21 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SignUp extends AppCompatActivity {
     Boolean isequalpass;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signup);
+
+        //상단 타이틀 바 제거
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+        //변수 선언
         TextView TV_signup;
         EditText ET_id, ET_password,ET_repassword,ET_nickname, ET_email;
         Button BTN_signup;
