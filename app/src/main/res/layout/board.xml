@@ -8,62 +8,62 @@
 
     <ImageButton
         android:id="@+id/imageButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="47dp"
         android:layout_marginTop="83dp"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:src="@drawable/sample" />
 
     <ImageButton
         android:id="@+id/imageButton7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="83dp"
         android:layout_marginEnd="32dp"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:src="@drawable/sample"/>
 
     <ImageButton
         android:id="@+id/imageButton5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_below="@+id/imageButton2"
         android:layout_alignParentStart="true"
         android:layout_marginStart="45dp"
         android:layout_marginTop="28dp"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:src="@drawable/sample"/>
 
     <ImageButton
         android:id="@+id/imageButton6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_below="@+id/imageButton7"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="31dp"
         android:layout_marginEnd="31dp"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:src="@drawable/sample"/>
 
     <ImageButton
         android:id="@+id/imageButton3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_below="@+id/imageButton5"
         android:layout_alignParentStart="true"
         android:layout_marginStart="46dp"
         android:layout_marginTop="28dp"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:src="@drawable/sample"/>
 
     <ImageButton
         android:id="@+id/imageButton4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_below="@+id/imageButton6"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="29dp"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:src="@drawable/sample"/>
 
 </RelativeLayout>

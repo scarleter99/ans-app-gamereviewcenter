@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class SignupPage extends AppCompatActivity {
+public class SignUp extends AppCompatActivity {
     Boolean isequalpass;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

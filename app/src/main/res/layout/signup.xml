@@ -127,7 +127,7 @@
         android:layout_marginStart="54dp"
         android:layout_marginTop="42dp"
         android:backgroundTint="#FFD966"
-        android:text="@string/BTN_signup"
+        android:text="@string/signupBtn"
         android:textColor="#FFFFFF" />
 
     <Button
@@ -141,7 +141,7 @@
         android:layout_marginEnd="7dp"
         android:layout_toEndOf="@+id/ET_inputid"
         android:background="#B9E6F8"
-        android:text="@string/BTN_idcheck"
+        android:text="@string/idCheckBtn"
         android:textColor="#FFFFFF" />
 
     <Button
@@ -155,7 +155,7 @@
         android:layout_marginEnd="7dp"
         android:layout_toEndOf="@+id/ET_nickname"
         android:background="#B9E6F8"
-        android:text="@string/BTN_nicknamecheck"
+        android:text="@string/nickNameCheckBtn"
         android:textColor="#FFFFFF" />
 
 </RelativeLayout>

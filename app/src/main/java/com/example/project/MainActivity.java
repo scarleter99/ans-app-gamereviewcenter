@@ -9,31 +9,23 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-    TextView TV_signup;
-    Button BTN_login;
+    TextView signupTV;
+    Button loginBTN;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TV_signup = (TextView) findViewById(R.id.TV_signup);
-        TV_signup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), SignupPage.class);
-                startActivity(intent);
-            }
-        });
-
-        BTN_login = (Button) findViewById(R.id.BTN_login);
-        BTN_login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity_Second.class);
-                startActivity(intent);
-            }
-        });
-    };
-
+        signupTV = (TextView) findViewById(R.id.TV_signup);
+        loginBTN = (Button) findViewById(R.id.BTN_login);
     }
+    public void signupTextviewClicked(View v) {
+        Intent intent = new Intent(getApplicationContext(), SignUp.class);
+        startActivity(intent);
+    }
+    public void loginButtonClicked(View v) {
+        Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
+        startActivity(intent);
+    }
+}
 

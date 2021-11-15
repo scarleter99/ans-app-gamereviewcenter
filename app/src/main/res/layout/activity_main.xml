@@ -18,7 +18,7 @@
         android:layout_marginTop="322dp"
         android:backgroundTint="#FFFFFF"
         android:ems="10"
-        android:hint="@string/ET_inputid"
+        android:hint="@string/inputIdEt"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:textColor="#FFFFFF"
@@ -33,7 +33,7 @@
         android:layout_marginTop="30dp"
         android:backgroundTint="#FFFFFF"
         android:ems="10"
-        android:hint="@string/ET_inputpassword"
+        android:hint="@string/inputPasswordEt"
         android:inputType="textPersonName|textPassword"
         android:minHeight="48dp"
         android:textColor="#FFFFFF"
@@ -47,7 +47,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="27dp"
         android:backgroundTint="#FFD966"
-        android:text="@string/BTN_login"
+        android:onClick="loginButtonClicked"
+        android:text="@string/loginBtn"
         android:textColor="#FFFFFF" />
 
     <TextView
@@ -55,11 +56,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/BTN_login"
-        android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="23dp"
         android:layout_marginEnd="176dp"
-        android:text="@string/TV_signup"
+        android:onClick="signupTextviewClicked"
+        android:text="@string/signupTv"
         android:textColor="#356577"
         android:textSize="16sp" />
 

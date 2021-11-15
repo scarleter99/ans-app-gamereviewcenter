@@ -11,7 +11,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainActivity_Second extends AppCompatActivity {
+public class SecondActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,15 +20,15 @@ public class MainActivity_Second extends AppCompatActivity {
         Fragment fragment_board;
         Fragment fragment_mypage;
         Fragment fragment_writing;
-        fragment_board = new board();
-        fragment_mypage = new mypage();
-        fragment_writing = new writing();
+        fragment_board = new BoardFragment();
+        fragment_mypage = new MypageFragment();
+        fragment_writing = new WritingFragement();
         //바텀네비게이션 변수 설정
         BottomNavigationView BNV_menu;
         BNV_menu = (BottomNavigationView) findViewById(R.id.BNV_menu);
 
         //처음화면 게시판으로 설정
-        getSupportFragmentManager().beginTransaction().add(R.id.layout_activity_main_second, new board()).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.layout_activity_main_second, new BoardFragment()).commit();
 
         //바텀네비게이션 화면 전환
         BNV_menu.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener() {
