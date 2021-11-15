@@ -9,15 +9,15 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-    TextView signupTV;
-    Button loginBTN;
+    TextView TV_signup;
+    Button BTN_login;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        signupTV = (TextView) findViewById(R.id.TV_signup);
-        loginBTN = (Button) findViewById(R.id.BTN_login);
+        TV_signup = (TextView) findViewById(R.id.TV_signup);
+        BTN_login = (Button) findViewById(R.id.BTN_login);
     }
     public void signupTextviewClicked(View v) {
         Intent intent = new Intent(getApplicationContext(), SignUp.class);

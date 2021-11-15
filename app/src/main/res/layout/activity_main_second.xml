@@ -4,14 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layout_activity_main_second"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#60CBF6">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/BNV_menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:backgroundTint="#00FFFFFF"
         app:itemBackground="@android:color/white"
+        app:itemIconTint=" #FFD966"
+        app:itemTextColor="#60CBF6 "
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -4,8 +4,8 @@
     <item
         android:id="@+id/item_board"
         android:enabled="true"
-        android:icon="@drawable/ic_pen"
-        android:title="게시판"/>
+        android:icon="?attr/actionModePasteDrawable"
+        android:title="게시판" />
 
     <item
         android:id="@+id/item_writing"
@@ -16,6 +16,6 @@
     <item
         android:id="@+id/item_mypage"
         android:enabled="true"
-        android:icon="@drawable/ic_pen"
-        android:title="내정보"/>
+        android:icon="?android:attr/actionModeFindDrawable"
+        android:title="내정보" />
 </menu>

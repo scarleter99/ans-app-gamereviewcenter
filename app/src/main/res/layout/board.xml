@@ -4,66 +4,78 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layout_board"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="47dp"
-        android:layout_marginTop="83dp"
-        android:src="@drawable/sample" />
+    <TableLayout
+        android:layout_width="317dp"
+        android:layout_height="565dp"
+        android:layout_centerInParent="true">
 
-    <ImageButton
-        android:id="@+id/imageButton7"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="83dp"
-        android:layout_marginEnd="32dp"
-        android:src="@drawable/sample"/>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <ImageButton
-        android:id="@+id/imageButton5"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_below="@+id/imageButton2"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="28dp"
-        android:src="@drawable/sample"/>
+            <ImageButton
+                android:id="@+id/BTN_pc"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="5sp"
+                android:background="@android:color/white"
+                app:srcCompat="@drawable/ic_pc" />
 
-    <ImageButton
-        android:id="@+id/imageButton6"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_below="@+id/imageButton7"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="31dp"
-        android:layout_marginEnd="31dp"
-        android:src="@drawable/sample"/>
 
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_below="@+id/imageButton5"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="46dp"
-        android:layout_marginTop="28dp"
-        android:src="@drawable/sample"/>
+            <ImageButton
+                android:id="@+id/BTN_mobile"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="5sp"
+                android:background="@android:color/white"
+                app:srcCompat="@drawable/sample" />
+        </TableRow>
 
-    <ImageButton
-        android:id="@+id/imageButton4"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_below="@+id/imageButton6"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="29dp"
-        android:src="@drawable/sample"/>
+        <TableRow
+            android:layout_width="346dp"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/BTN_nintendo"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="5sp"
+                android:background="@android:color/white"
+                app:srcCompat="@drawable/sample" />
+
+            <ImageButton
+                android:id="@+id/BTN_ps4ps5"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="5sp"
+                android:background="@android:color/white"
+                app:srcCompat="@drawable/sample" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/BTN_xbox"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="5sp"
+                android:background="@android:color/white"
+                app:srcCompat="@drawable/sample" />
+
+            <ImageButton
+                android:id="@+id/BTN_etc"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="5sp"
+                android:background="@android:color/white"
+                app:srcCompat="@drawable/sample" />
+        </TableRow>
+
+    </TableLayout>
 
 </RelativeLayout>
