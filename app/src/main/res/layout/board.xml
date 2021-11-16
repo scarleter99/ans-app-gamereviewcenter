@@ -7,9 +7,20 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <TextView
+        android:id="@+id/TV_selectboard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="@string/TV_selectboard"
+        android:textColor="#FFFFFF" />
+
     <TableLayout
-        android:layout_width="317dp"
-        android:layout_height="565dp"
+        android:id="@+id/layout_board_table"
+        android:layout_width="319dp"
+        android:layout_height="476dp"
         android:layout_centerInParent="true">
 
         <TableRow
@@ -21,7 +32,7 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_margin="5sp"
-                android:background="@android:color/white"
+                android:background="@drawable/btn_imagecircle"
                 app:srcCompat="@drawable/ic_pc" />
 
 
@@ -30,7 +41,7 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_margin="5sp"
-                android:background="@android:color/white"
+                android:background="@drawable/btn_imagecircle"
                 app:srcCompat="@drawable/ic_mobile" />
         </TableRow>
 
@@ -43,7 +54,7 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_margin="5sp"
-                android:background="@android:color/white"
+                android:background="@drawable/btn_imagecircle"
                 app:srcCompat="@drawable/ic_nintendo" />
 
             <ImageButton
@@ -51,7 +62,7 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_margin="5sp"
-                android:background="@android:color/white"
+                android:background="@drawable/btn_imagecircle"
                 app:srcCompat="@drawable/ic_playstation" />
         </TableRow>
 
@@ -64,7 +75,7 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_margin="5sp"
-                android:background="@android:color/white"
+                android:background="@drawable/btn_imagecircle"
                 app:srcCompat="@drawable/ic_xbox" />
 
             <ImageButton
@@ -72,7 +83,7 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_margin="5sp"
-                android:background="@android:color/white"
+                android:background="@drawable/btn_imagecircle"
                 app:srcCompat="@drawable/ic_etc" />
         </TableRow>
 

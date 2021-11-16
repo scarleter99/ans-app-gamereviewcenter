@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layout_mypage"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/TV_mypage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="47dp"
+        android:text="마이 페이지"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp" />
 
     <TableLayout
         android:id="@+id/mypage_table"
@@ -12,22 +25,25 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="30dp"
         android:layout_marginTop="104dp"
-        android:background="#0087FF">
+        android:background="@drawable/layout_mypagecircle"
+        android:baselineAligned="false">
 
         <TableRow
-            android:id="@+id/ID_ROW"
+            android:id="@+id/layout_id"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_margin="2dp"
             android:layout_weight="1">
 
             <TextView
                 android:id="@+id/mypage_Id"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_gravity="center"
                 android:layout_weight="1"
-                android:text="     ID   : "
-                android:textAlignment="textEnd"
-                android:textColor="@color/black"
+                android:gravity="center"
+                android:text="아이디:"
+                android:textColor="@color/white"
                 android:textIsSelectable="false"
                 android:textSize="24dp" />
 
@@ -36,15 +52,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="7"
-                android:text="ID표시"
                 android:textAlignment="center"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="24dp"
                 android:textStyle="bold|italic" />
         </TableRow>
 
         <TableRow
-            android:id="@+id/EMAIL_ROW"
+            android:id="@+id/layout_nickname"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1">
@@ -53,10 +68,11 @@
                 android:id="@+id/mypage_Id4"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_gravity="center"
                 android:layout_weight="1"
-                android:text=" EMAIL : "
-                android:textAlignment="textEnd"
-                android:textColor="@color/black"
+                android:gravity="center"
+                android:text="닉네임:"
+                android:textColor="@color/white"
                 android:textIsSelectable="false"
                 android:textSize="24dp" />
 
@@ -65,16 +81,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="7"
-                android:text="EMAIL주소 표시"
                 android:textAlignment="center"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="24dp"
                 android:textStyle="bold|italic" />
 
         </TableRow>
 
         <TableRow
-            android:id="@+id/PHONE_ROW"
+            android:id="@+id/layout_email"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1">
@@ -83,10 +98,11 @@
                 android:id="@+id/mypage_Id5"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_gravity="center"
                 android:layout_weight="1"
-                android:text=" PHONE : "
-                android:textAlignment="textEnd"
-                android:textColor="@color/black"
+                android:gravity="center"
+                android:text="이메일:"
+                android:textColor="@color/white"
                 android:textIsSelectable="false"
                 android:textSize="24dp" />
 
@@ -95,16 +111,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="7"
-                android:text="전화번호 표시"
                 android:textAlignment="center"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="24dp"
                 android:textStyle="bold|italic" />
 
         </TableRow>
 
         <TableRow
-            android:id="@+id/NAME_ROW"
+            android:id="@+id/layout_password"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1">
@@ -113,10 +128,11 @@
                 android:id="@+id/mypage_Id6"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_gravity="center"
                 android:layout_weight="1"
-                android:text="  NAME : "
-                android:textAlignment="textEnd"
-                android:textColor="@color/black"
+                android:gravity="center"
+                android:text="비밀번호:"
+                android:textColor="@color/white"
                 android:textIsSelectable="false"
                 android:textSize="24dp" />
 
@@ -125,9 +141,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="7"
-                android:text="이름 표시"
                 android:textAlignment="center"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="24dp"
                 android:textStyle="bold|italic" />
 
@@ -141,7 +156,13 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="220dp"
+        android:background="@drawable/btn_circle"
         android:text="확인"
-        android:textSize="24dp" />
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textColorLink="#FFFFFF"
+        android:textSize="24dp"
+        tools:ignore="TextContrastCheck" />
 
 </RelativeLayout>

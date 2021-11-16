@@ -35,15 +35,17 @@
                 android:inputType="textPersonName" />
 
             <Button
-                android:id="@+id/button8"
+                android:id="@+id/BTN_search"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="검색" />
+                android:background="@drawable/btn_circle"
+                android:text="검색"
+                android:textColor="#FFFFFF" />
         </LinearLayout>
 
         <Button
-            android:id="@+id/button10"
+            android:id="@+id/BTN_done"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="게임이름/평점/제목/추천수" />

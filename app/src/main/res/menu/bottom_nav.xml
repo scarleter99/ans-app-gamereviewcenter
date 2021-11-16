@@ -17,5 +17,5 @@
         android:id="@+id/item_mypage"
         android:enabled="true"
         android:icon="?android:attr/actionModeFindDrawable"
-        android:title="내정보" />
+        android:title="마이 페이지" />
 </menu>
