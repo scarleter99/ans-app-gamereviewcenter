@@ -12,7 +12,7 @@
         android:orientation="vertical">
 
         <Spinner
-            android:id="@+id/spinner2"
+            android:id="@+id/SPN_kindreview"
             android:layout_width="match_parent"
             android:layout_height="51dp" />
 
