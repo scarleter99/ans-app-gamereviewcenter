@@ -23,7 +23,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="4"
-                android:background="@drawable/layout_writingcircle"
                 android:gravity="center"
                 android:text="플랫폼"
                 android:textColor="#FFFFFF"
@@ -46,10 +45,9 @@
             <TextView
                 android:id="@+id/TV_pl_re_title"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="40dp"
                 android:layout_margin="2dp"
                 android:layout_weight="4"
-                android:background="@drawable/layout_writingcircle"
                 android:gravity="center"
                 android:text="제목"
                 android:textColor="#FFFFFF"
@@ -62,6 +60,9 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:hint="제목"
+                android:backgroundTint="#FFFFFF"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FFFFFF"
                 android:inputType="textPersonName"
                 tools:ignore="TouchTargetSizeCheck" />
 
@@ -78,7 +79,6 @@
                 android:layout_height="match_parent"
                 android:layout_margin="2dp"
                 android:layout_weight="4"
-                android:background="@drawable/layout_writingcircle"
                 android:gravity="center"
                 android:text="게임명"
                 android:textColor="#FFFFFF"
@@ -91,6 +91,9 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:hint="게임명"
+                android:backgroundTint="#FFFFFF"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FFFFFF"
                 android:inputType="textPersonName"
                 tools:ignore="TouchTargetSizeCheck" />
         </LinearLayout>
@@ -105,6 +108,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textColor="#FFFFFF"
                 android:text="플레이타임" />
 
             <ImageView
