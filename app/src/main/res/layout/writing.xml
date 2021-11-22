@@ -32,7 +32,7 @@
             <Spinner
                 android:id="@+id/spinner"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
@@ -149,15 +149,16 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="332dp">
+            android:layout_height="55dp"
+            android:background="#B9E6F8">
 
             <Spinner
                 android:id="@+id/SPN_kindreview"
-                android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
+                android:layout_width="168dp"
+                android:layout_height="48dp"
+                android:layout_alignParentTop="true"
                 android:layout_marginStart="15dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="7dp"
                 android:minHeight="48dp"
                 tools:ignore="SpeakableTextPresentCheck" />
 
@@ -166,44 +167,37 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
+                android:layout_marginStart="83dp"
                 android:layout_marginLeft="60dp"
-                android:layout_marginTop="34dp"
-                android:layout_toRightOf="@id/SPN_kindreview"
+                android:layout_marginTop="18dp"
+                android:layout_toEndOf="@+id/SPN_kindreview"
                 tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-            <EditText
-                android:id="@+id/editTextTextPersonName4"
-                android:layout_width="300dp"
-                android:layout_height="100dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="18dp"
-                android:layout_marginTop="89dp"
-                android:background="#FFFFFF"
-                android:ems="10"
-                android:hint="내용을 입력하세요" />
 
             <View
                 android:id="@+id/가로줄6"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
                 android:layout_marginTop="77dp"
                 android:layout_marginEnd="0dp"
                 android:layout_weight="1"
                 android:background="#60CBF6" />
+        </RelativeLayout>
 
-            <View
-                android:id="@+id/가로줄7"
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="332dp">
+
+            <EditText
+                android:id="@+id/editTextTextPersonName4"
+                android:layout_width="286dp"
+                android:layout_height="86dp"
+                android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="205dp"
-                android:layout_marginEnd="0dp"
-                android:layout_weight="1"
-                android:background="#60CBF6" />
+                android:layout_marginStart="23dp"
+                android:layout_marginTop="32dp"
+                android:background="#FFFFFF"
+                android:ems="10"
+                android:hint="내용을 입력하세요" />
 
             <Button
                 android:id="@+id/BTN_add"
@@ -236,9 +230,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/editTextTextPersonName4"
+                android:layout_alignBottom="@+id/가로줄7"
                 android:layout_marginTop="35dp"
                 android:layout_marginEnd="0dp"
-                android:layout_marginBottom="0dp"
+                android:layout_marginBottom="6dp"
                 android:background="@drawable/btn_circle"
                 android:text="작성 완료"
                 android:textColor="#FFFFFF" />

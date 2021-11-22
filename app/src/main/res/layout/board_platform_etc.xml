@@ -17,7 +17,8 @@
             android:layout_width="match_parent"
             android:layout_height="40sp"
             android:gravity="center"
-            android:text="TextView"
+            android:text="ETC"
+            android:textColor="#60CBF6"
             android:textSize="18sp" />
 
         <View
