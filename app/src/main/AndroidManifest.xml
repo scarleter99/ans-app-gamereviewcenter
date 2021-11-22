@@ -28,7 +28,6 @@
         <activity android:name=".Board_Platform_Nintendo_Activity"/>
         <activity android:name=".Board_Platform_Ps4ps5_Activity"/>
         <activity android:name=".Board_Platform_Xbox_Activity">
-
         </activity>
     </application>
 
