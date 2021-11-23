@@ -34,8 +34,8 @@
             android:orientation="horizontal">
 
             <Spinner
-                android:id="@+id/spinner"
-                android:layout_width="93dp"
+                android:id="@+id/SPN_ps4ps5"
+                android:layout_width="120dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1" />
 
@@ -65,11 +65,22 @@
             android:layout_height="2dp"
             android:background="#B9E6F8" />
 
-        <Button
-            android:id="@+id/BTN_samplereview_ps4ps5"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Button" />
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/BTN_samplereview_ps4ps5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Button" />
+            </LinearLayout>
+        </ScrollView>
 
     </LinearLayout>
 
