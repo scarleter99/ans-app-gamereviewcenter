@@ -20,7 +20,7 @@
 
             <TextView
                 android:id="@+id/TV_pl_re_platform"
-                android:layout_width="match_parent"
+                android:layout_width="420dp"
                 android:layout_height="match_parent"
                 android:layout_weight="4"
                 android:background="@drawable/layout_writingcircle"
@@ -30,10 +30,11 @@
                 android:textSize="20sp" />
 
             <Spinner
-                android:id="@+id/SPN_mobile"
+                android:id="@+id/SPN_writing"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:foregroundTint="#60CBF6"
                 tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
         </LinearLayout>
@@ -42,7 +43,6 @@
             android:id="@+id/가로줄5"
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:layout_weight="4"
             android:background="#60CBF6" />
 
         <LinearLayout
@@ -52,7 +52,7 @@
 
             <TextView
                 android:id="@+id/TV_pl_re_title"
-                android:layout_width="match_parent"
+                android:layout_width="420dp"
                 android:layout_height="match_parent"
                 android:layout_margin="2dp"
                 android:layout_weight="4"
@@ -79,7 +79,6 @@
             android:id="@+id/가로줄3"
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:layout_weight="4"
             android:background="#60CBF6" />
 
         <LinearLayout
@@ -89,7 +88,7 @@
 
             <TextView
                 android:id="@+id/TV_pl_re_gamename"
-                android:layout_width="match_parent"
+                android:layout_width="420dp"
                 android:layout_height="match_parent"
                 android:layout_margin="2dp"
                 android:layout_weight="4"
@@ -115,7 +114,6 @@
             android:id="@+id/가로줄4"
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:layout_weight="4"
             android:background="#60CBF6" />
 
         <LinearLayout
@@ -140,64 +138,70 @@
 
         </LinearLayout>
 
-        <View
-            android:id="@+id/가로줄"
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_weight="1"
-            android:background="#60CBF6" />
-
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="55dp"
+            android:layout_height="73dp"
             android:background="#B9E6F8">
+
+            <TextView
+                android:id="@+id/TV_kindreview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="리뷰 종류" />
 
             <Spinner
                 android:id="@+id/SPN_kindreview"
                 android:layout_width="168dp"
                 android:layout_height="48dp"
+                android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="7dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="23dp"
                 android:minHeight="48dp"
                 tools:ignore="SpeakableTextPresentCheck" />
 
-            <Spinner
-                android:id="@+id/SPN_rate"
-                android:layout_width="100dp"
+            <TextView
+                android:id="@+id/TV_rating"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="83dp"
-                android:layout_marginLeft="60dp"
-                android:layout_marginTop="18dp"
-                android:layout_toEndOf="@+id/SPN_kindreview"
-                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="217dp"
+                android:text="평점" />
 
-            <View
-                android:id="@+id/가로줄6"
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_marginTop="77dp"
-                android:layout_marginEnd="0dp"
-                android:layout_weight="1"
-                android:background="#60CBF6" />
+            <RatingBar
+                android:id="@+id/RB_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="5dp"
+                android:backgroundTint=" #FFD966"
+                android:progressTint=" #FFD966" />
+
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="332dp">
+            android:layout_height="319dp">
 
             <EditText
                 android:id="@+id/editTextTextPersonName4"
-                android:layout_width="286dp"
-                android:layout_height="86dp"
+                android:layout_width="298dp"
+                android:layout_height="101dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="23dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="17dp"
                 android:background="#FFFFFF"
                 android:ems="10"
-                android:hint="내용을 입력하세요" />
+                android:hint="내용을 입력하세요"
+                android:textColor="#000000"
+                android:textColorHighlight="#00FFFFFF" />
 
             <Button
                 android:id="@+id/BTN_add"
@@ -206,8 +210,8 @@
                 android:layout_above="@+id/BTN_cancel"
                 android:layout_alignTop="@+id/editTextTextPersonName4"
                 android:layout_marginLeft="16dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="11dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="28dp"
                 android:layout_toRightOf="@id/editTextTextPersonName4"
                 android:background="@drawable/btn_circle"
                 android:text="추가"
@@ -219,7 +223,7 @@
                 android:layout_height="35dp"
                 android:layout_alignBottom="@id/editTextTextPersonName4"
                 android:layout_marginLeft="16dp"
-                android:layout_marginBottom="12dp"
+                android:layout_marginBottom="-3dp"
                 android:layout_toRightOf="@id/editTextTextPersonName4"
                 android:background="@drawable/btn_circle"
                 android:text="취소"
@@ -231,7 +235,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/editTextTextPersonName4"
                 android:layout_alignBottom="@+id/가로줄7"
-                android:layout_marginTop="35dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="0dp"
                 android:layout_marginBottom="6dp"
                 android:background="@drawable/btn_circle"
