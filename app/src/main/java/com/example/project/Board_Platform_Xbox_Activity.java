@@ -21,7 +21,7 @@ public class Board_Platform_Xbox_Activity extends AppCompatActivity {
 
         // 스피너
         String[] array = {"제목","작성자","게임명"};
-        Spinner SPN_xbox = (Spinner) findViewById(R.id.SPN_xbox);
+        Spinner SPN_xbox = (Spinner) findViewById(R.id.spn_xbox);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, array);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
         SPN_xbox.setAdapter(adapter);

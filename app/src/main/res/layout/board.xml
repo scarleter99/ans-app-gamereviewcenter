@@ -8,7 +8,7 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/TV_selectboard"
+        android:id="@+id/tv_selectboard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -28,7 +28,7 @@
             android:layout_height="match_parent">
 
             <ImageButton
-                android:id="@+id/BTN_pc"
+                android:id="@+id/btn_pc"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_margin="5sp"
@@ -37,7 +37,7 @@
 
 
             <ImageButton
-                android:id="@+id/BTN_mobile"
+                android:id="@+id/btn_mobile"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_margin="5sp"
@@ -50,7 +50,7 @@
             android:layout_height="match_parent">
 
             <ImageButton
-                android:id="@+id/BTN_nintendo"
+                android:id="@+id/btn_nintendo"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_margin="5sp"
@@ -58,7 +58,7 @@
                 app:srcCompat="@drawable/ic_nintendo" />
 
             <ImageButton
-                android:id="@+id/BTN_ps4ps5"
+                android:id="@+id/btn_ps4ps5"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_margin="5sp"
@@ -71,7 +71,7 @@
             android:layout_height="match_parent">
 
             <ImageButton
-                android:id="@+id/BTN_xbox"
+                android:id="@+id/btn_xbox"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_margin="5sp"
@@ -79,7 +79,7 @@
                 app:srcCompat="@drawable/ic_xbox" />
 
             <ImageButton
-                android:id="@+id/BTN_etc"
+                android:id="@+id/btn_etc"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_margin="5sp"

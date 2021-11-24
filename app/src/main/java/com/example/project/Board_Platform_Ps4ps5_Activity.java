@@ -20,7 +20,7 @@ public class Board_Platform_Ps4ps5_Activity extends AppCompatActivity {
         actionBar.hide();
 
         String[] array = {"제목","작성자","게임명"};
-        Spinner SPN_ps4ps5 = (Spinner) findViewById(R.id.SPN_ps4ps5);
+        Spinner SPN_ps4ps5 = (Spinner) findViewById(R.id.spn_ps4ps5);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, array);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
         SPN_ps4ps5.setAdapter(adapter);

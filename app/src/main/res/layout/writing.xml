@@ -19,7 +19,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/TV_pl_re_platform"
+                android:id="@+id/tv_writing_platform"
                 android:layout_width="420dp"
                 android:layout_height="match_parent"
                 android:layout_weight="4"
@@ -30,7 +30,7 @@
                 android:textSize="20sp" />
 
             <Spinner
-                android:id="@+id/SPN_writing"
+                android:id="@+id/spn_writing_platform"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -51,7 +51,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/TV_pl_re_title"
+                android:id="@+id/tv_writing_title"
                 android:layout_width="420dp"
                 android:layout_height="match_parent"
                 android:layout_margin="2dp"
@@ -63,7 +63,7 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/ET_title"
+                android:id="@+id/et_writing_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -87,7 +87,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/TV_pl_re_gamename"
+                android:id="@+id/tv_writing_gamename"
                 android:layout_width="420dp"
                 android:layout_height="match_parent"
                 android:layout_margin="2dp"
@@ -99,7 +99,7 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/ET_gamename"
+                android:id="@+id/et_writing_gamename"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -122,7 +122,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/TV_playtime"
+                android:id="@+id/tv_playtime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -144,13 +144,13 @@
             android:background="#B9E6F8">
 
             <TextView
-                android:id="@+id/TV_kindreview"
+                android:id="@+id/tv_kindreview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="리뷰 종류" />
 
             <Spinner
-                android:id="@+id/SPN_kindreview"
+                android:id="@+id/spn_kindreview"
                 android:layout_width="168dp"
                 android:layout_height="48dp"
                 android:layout_alignParentStart="true"
@@ -161,7 +161,7 @@
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <TextView
-                android:id="@+id/TV_rating"
+                android:id="@+id/tv_rating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
@@ -171,7 +171,7 @@
                 android:text="평점" />
 
             <RatingBar
-                android:id="@+id/RB_rating"
+                android:id="@+id/rb_rating"
                 android:layout_width="wrap_content"
                 android:layout_height="44dp"
                 android:layout_alignParentTop="true"
@@ -190,7 +190,7 @@
             android:layout_height="319dp">
 
             <EditText
-                android:id="@+id/editTextTextPersonName4"
+                android:id="@+id/et_content"
                 android:layout_width="298dp"
                 android:layout_height="101dp"
                 android:layout_alignParentStart="true"
@@ -204,37 +204,38 @@
                 android:textColorHighlight="#00FFFFFF" />
 
             <Button
-                android:id="@+id/BTN_add"
+                android:id="@+id/btn_add"
                 android:layout_width="70dp"
                 android:layout_height="35dp"
-                android:layout_above="@+id/BTN_cancel"
-                android:layout_alignTop="@+id/editTextTextPersonName4"
+                android:layout_above="@+id/btn_cancel"
+                android:layout_alignTop="@+id/et_content"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="1dp"
                 android:layout_marginBottom="28dp"
-                android:layout_toRightOf="@id/editTextTextPersonName4"
+                android:layout_toRightOf="@id/et_content"
                 android:background="@drawable/btn_circle"
+                android:gravity="center"
                 android:text="추가"
                 android:textColor="#FFFFFF" />
 
             <Button
-                android:id="@+id/BTN_cancel"
+                android:id="@+id/btn_cancel"
                 android:layout_width="70dp"
                 android:layout_height="35dp"
-                android:layout_alignBottom="@id/editTextTextPersonName4"
+                android:layout_alignBottom="@id/et_content"
                 android:layout_marginLeft="16dp"
                 android:layout_marginBottom="-3dp"
-                android:layout_toRightOf="@id/editTextTextPersonName4"
+                android:layout_toRightOf="@id/et_content"
                 android:background="@drawable/btn_circle"
+                android:gravity="center"
                 android:text="취소"
                 android:textColor="#FFFFFF" />
 
             <Button
-                android:id="@+id/BTN_done"
+                android:id="@+id/btn_done"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/editTextTextPersonName4"
-                android:layout_alignBottom="@+id/가로줄7"
+                android:layout_below="@+id/et_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="0dp"
                 android:layout_marginBottom="6dp"

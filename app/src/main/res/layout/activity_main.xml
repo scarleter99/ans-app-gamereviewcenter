@@ -10,7 +10,7 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/IV_applogo"
+        android:id="@+id/iv_applogo"
         android:layout_width="148dp"
         android:layout_height="227dp"
         android:layout_alignParentStart="true"
@@ -21,7 +21,7 @@
         app:srcCompat="@drawable/logo" />
 
     <EditText
-        android:id="@+id/ET_inputid"
+        android:id="@+id/et_inputid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -36,10 +36,10 @@
         android:textColorHint="#FFFFFF" />
 
     <EditText
-        android:id="@+id/ET_inputpassword"
+        android:id="@+id/et_inputpassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ET_inputid"
+        android:layout_below="@+id/et_inputid"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:backgroundTint="#FFFFFF"
@@ -51,10 +51,10 @@
         android:textColorHint="#FFFFFF" />
 
     <Button
-        android:id="@+id/BTN_login"
+        android:id="@+id/btn_login"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ET_inputpassword"
+        android:layout_below="@+id/et_inputpassword"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="27dp"
         android:background="@drawable/btn_circle"
@@ -64,10 +64,10 @@
         android:textColor="#FFFFFF" />
 
     <TextView
-        android:id="@+id/TV_signup"
+        android:id="@+id/tv_signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/BTN_login"
+        android:layout_below="@+id/btn_login"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="23dp"
         android:layout_marginEnd="176dp"
@@ -78,10 +78,10 @@
         tools:ignore="TouchTargetSizeCheck" />
 
     <Button
-        android:id="@+id/BTN_sample"
+        android:id="@+id/btn_sample"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/TV_signup"
+        android:layout_below="@+id/tv_signup"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="27dp"
         android:background="@drawable/btn_circle"
@@ -91,10 +91,10 @@
         android:textColor="#FFFFFF" />
 
     <TextView
-        android:id="@+id/TV_sample"
+        android:id="@+id/tv_sample"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/IV_applogo"
+        android:layout_below="@+id/iv_applogo"
         android:layout_centerHorizontal="true"
         android:layout_marginEnd="176dp"
         android:text="Sample 텍스트뷰"

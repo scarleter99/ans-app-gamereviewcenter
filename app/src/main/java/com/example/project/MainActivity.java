@@ -26,15 +26,14 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
     FirebaseFirestore db;
 
-    TextView TV_signup;
-    TextView TV_sample; // 샘플코드
-    Button BTN_login;
+    TextView tv_signup;
+    TextView tv_sample; // 샘플코드
+    Button btn_login;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,9 +45,9 @@ public class MainActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
         // 회원가입 textview, 로그인 button 변수 설정
-        TV_signup = (TextView) findViewById(R.id.TV_signup);
-        TV_sample = (TextView) findViewById(R.id.TV_sample); // 샘플코드
-        BTN_login = (Button) findViewById(R.id.BTN_login);
+        tv_signup = (TextView) findViewById(R.id.tv_signup);
+        tv_sample = (TextView) findViewById(R.id.tv_sample); // 샘플코드
+        btn_login = (Button) findViewById(R.id.btn_login);
     }
 
     // 로그인 버튼 클릭
@@ -125,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
     public void useData(Map<String, Object> data, int what) {
         switch (what) {
             case 1:
-                TV_sample.setText(data.toString()); // 샘플코드
+                tv_sample.setText(data.toString()); // 샘플코드
         }
     }
 
@@ -133,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
     public void useData(ArrayList<Map<String, Object>> data, int what) {
         switch (what) {
             case 1:
-                TV_sample.setText(data.toString()); // 샘플코드
+                tv_sample.setText(data.toString()); // 샘플코드
         }
     }
 
@@ -142,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case 1:
-                    TV_signup.setText(msg.obj.toString());
+                    tv_signup.setText(msg.obj.toString());
                     break;
             }
         }

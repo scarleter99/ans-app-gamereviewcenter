@@ -28,14 +28,14 @@ public class SecondActivity extends AppCompatActivity {
         fragment_mypage = new MypageFragment();
         fragment_writing = new WritingFragement();
         //바텀네비게이션 변수 설정
-        BottomNavigationView BNV_menu;
-        BNV_menu = (BottomNavigationView) findViewById(R.id.BNV_menu);
+        BottomNavigationView bnv_menu;
+        bnv_menu = (BottomNavigationView) findViewById(R.id.bnv_menu);
 
         //처음화면 게시판으로 설정
         getSupportFragmentManager().beginTransaction().add(R.id.layout_activity_main_second, new BoardFragment()).commit();
 
         //바텀네비게이션 화면 전환
-        BNV_menu.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener() {
+        bnv_menu.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 FragmentTransaction ft = getSupportFragmentManager().beginTransaction();

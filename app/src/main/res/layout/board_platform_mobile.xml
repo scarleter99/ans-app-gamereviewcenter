@@ -13,7 +13,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/TV_board_platform_title"
+            android:id="@+id/tv_board_platform_title"
             android:layout_width="match_parent"
             android:layout_height="40sp"
             android:gravity="center"
@@ -34,13 +34,13 @@
             android:orientation="horizontal">
 
             <Spinner
-                android:id="@+id/SPN_mobile"
+                android:id="@+id/spn_mobile"
                 android:layout_width="120dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1" />
 
             <EditText
-                android:id="@+id/ET_search"
+                android:id="@+id/et_search"
                 android:layout_width="231dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -50,7 +50,7 @@
                 android:inputType="textPersonName" />
 
             <Button
-                android:id="@+id/BTN_search"
+                android:id="@+id/btn_search"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -77,7 +77,7 @@
                 android:orientation="vertical" >
 
                 <Button
-                    android:id="@+id/BTN_samplereview_mobile"
+                    android:id="@+id/btn_samplereview_mobile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Button" />

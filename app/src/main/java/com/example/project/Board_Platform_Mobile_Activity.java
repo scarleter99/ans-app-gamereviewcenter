@@ -20,7 +20,7 @@ public class Board_Platform_Mobile_Activity extends AppCompatActivity {
         actionBar.hide();
         //스피너 설정
         String[] array = {"제목","작성자","게임명"};
-        Spinner SPN_mobile = (Spinner) findViewById(R.id.SPN_mobile);
+        Spinner SPN_mobile = (Spinner) findViewById(R.id.spn_mobile);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, array);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
         SPN_mobile.setAdapter(adapter);

@@ -11,7 +11,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/TV_signup"
+        android:id="@+id/tv_signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -22,10 +22,10 @@
         android:textSize="34sp" />
 
     <EditText
-        android:id="@+id/ET_inputid"
+        android:id="@+id/et_inputid"
         android:layout_width="200sp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/TV_signup"
+        android:layout_below="@+id/tv_signup"
         android:layout_alignParentStart="true"
         android:layout_marginStart="106dp"
         android:layout_marginTop="46dp"
@@ -40,10 +40,10 @@
         android:textColorLink="#FFFFFF" />
 
     <EditText
-        android:id="@+id/ET_inputpassword"
+        android:id="@+id/et_inputpassword"
         android:layout_width="200sp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ET_inputid"
+        android:layout_below="@+id/et_inputid"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
@@ -61,10 +61,10 @@
         android:textColorLink="#FFFFFF" />
 
     <EditText
-        android:id="@+id/ET_repassword"
+        android:id="@+id/et_repassword"
         android:layout_width="200sp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ET_inputpassword"
+        android:layout_below="@+id/et_inputpassword"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="22dp"
@@ -80,10 +80,10 @@
         android:textColorLink="#FFFFFF" />
 
     <EditText
-        android:id="@+id/ET_nickname"
+        android:id="@+id/et_nickname"
         android:layout_width="200sp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ET_repassword"
+        android:layout_below="@+id/et_repassword"
         android:layout_alignParentStart="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="107dp"
@@ -99,10 +99,10 @@
         android:textColorLink="#FFFFFF" />
 
     <EditText
-        android:id="@+id/ET_email"
+        android:id="@+id/et_email"
         android:layout_width="200sp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ET_nickname"
+        android:layout_below="@+id/et_nickname"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="26dp"
@@ -118,10 +118,10 @@
         android:textColorLink="#FFFFFF" />
 
     <Button
-        android:id="@+id/BTN_signup"
+        android:id="@+id/btn_signup"
         android:layout_width="800px"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ET_email"
+        android:layout_below="@+id/et_email"
         android:layout_alignParentStart="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="54dp"
@@ -132,29 +132,29 @@
         android:textColor="#FFFFFF" />
 
     <Button
-        android:id="@+id/BTN_idcheck"
+        android:id="@+id/btn_idcheck"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/TV_signup"
+        android:layout_below="@+id/tv_signup"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="10dp"
         android:layout_marginTop="46dp"
         android:layout_marginEnd="7dp"
-        android:layout_toEndOf="@+id/ET_inputid"
+        android:layout_toEndOf="@+id/et_inputid"
         android:background="@drawable/layout_writingcircle"
         android:text="@string/idCheckBtn"
         android:textColor="#FFFFFF" />
 
     <Button
-        android:id="@+id/BTN_nicknamecheck"
+        android:id="@+id/btn_nicknamecheck"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ET_repassword"
+        android:layout_below="@+id/et_repassword"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="10dp"
         android:layout_marginTop="38dp"
         android:layout_marginEnd="7dp"
-        android:layout_toEndOf="@+id/ET_nickname"
+        android:layout_toEndOf="@+id/et_nickname"
         android:background="@drawable/layout_writingcircle"
         android:text="@string/nickNameCheckBtn"
         android:textColor="#FFFFFF" />

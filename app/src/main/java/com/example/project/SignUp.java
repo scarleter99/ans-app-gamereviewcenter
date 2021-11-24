@@ -23,21 +23,21 @@ public class SignUp extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
         //변수 선언
-        TextView TV_signup;
-        EditText ET_id, ET_password,ET_repassword,ET_nickname, ET_email;
-        Button BTN_signup;
-        ImageView IV_applogo;
+        TextView tv_signup;
+        EditText et_id, et_password,et_repassword,et_nickname, et_email;
+        Button btn_signup;
+        ImageView iv_applogo;
 
-        IV_applogo = (ImageView) findViewById(R.id.IV_applogo);
-        TV_signup = (TextView) findViewById(R.id.TV_signup);
-        ET_id = (EditText) findViewById(R.id.ET_inputid);
-        ET_password = (EditText) findViewById(R.id.ET_inputpassword);
-        ET_repassword = (EditText) findViewById(R.id.ET_repassword);
-        ET_nickname = (EditText) findViewById(R.id.ET_nickname);
-        ET_email = (EditText) findViewById(R.id.ET_email);
-        BTN_signup = (Button) findViewById(R.id.BTN_signup);
+        iv_applogo = (ImageView) findViewById(R.id.iv_applogo);
+        tv_signup = (TextView) findViewById(R.id.tv_signup);
+        et_id = (EditText) findViewById(R.id.et_inputid);
+        et_password = (EditText) findViewById(R.id.et_inputpassword);
+        et_repassword = (EditText) findViewById(R.id.et_repassword);
+        et_nickname = (EditText) findViewById(R.id.et_nickname);
+        et_email = (EditText) findViewById(R.id.et_email);
+        btn_signup = (Button) findViewById(R.id.btn_signup);
 
-        BTN_signup.setOnClickListener(new View.OnClickListener() {
+        btn_signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 

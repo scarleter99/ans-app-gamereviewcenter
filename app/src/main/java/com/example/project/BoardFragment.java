@@ -16,16 +16,16 @@ public class BoardFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.board, container, false);
-        ImageButton BTN_pc, BTN_mobile, BTN_nintendo, BTN_ps4ps5, BTN_xbox, BTN_etc;
-        BTN_pc = (ImageButton) view.findViewById(R.id.BTN_pc);
-        BTN_mobile = (ImageButton) view.findViewById(R.id.BTN_mobile);
-        BTN_nintendo = (ImageButton) view.findViewById(R.id.BTN_nintendo);
-        BTN_ps4ps5 = (ImageButton) view.findViewById(R.id.BTN_ps4ps5);
-        BTN_xbox = (ImageButton) view.findViewById(R.id.BTN_xbox);
-        BTN_etc = (ImageButton) view.findViewById(R.id.BTN_etc);
+        ImageButton btn_pc, btn_mobile, btn_nintendo, btn_ps4ps5, btn_xbox, btn_etc;
+        btn_pc = (ImageButton) view.findViewById(R.id.btn_pc);
+        btn_mobile = (ImageButton) view.findViewById(R.id.btn_mobile);
+        btn_nintendo = (ImageButton) view.findViewById(R.id.btn_nintendo);
+        btn_ps4ps5 = (ImageButton) view.findViewById(R.id.btn_ps4ps5);
+        btn_xbox = (ImageButton) view.findViewById(R.id.btn_xbox);
+        btn_etc = (ImageButton) view.findViewById(R.id.btn_etc);
 
         //pc버튼 클릭
-        BTN_pc.setOnClickListener(new View.OnClickListener() {
+        btn_pc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), Board_Platform_Activity.class);
@@ -34,7 +34,7 @@ public class BoardFragment extends Fragment {
         });
 
         //mobile버튼 클릭
-        BTN_mobile.setOnClickListener(new View.OnClickListener() {
+        btn_mobile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), Board_Platform_Mobile_Activity.class);
@@ -43,7 +43,7 @@ public class BoardFragment extends Fragment {
         });
 
         //닌텐도버튼 클릭
-        BTN_nintendo.setOnClickListener(new View.OnClickListener() {
+        btn_nintendo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), Board_Platform_Nintendo_Activity.class);
@@ -52,7 +52,7 @@ public class BoardFragment extends Fragment {
         });
 
         //플레이스테이션버튼 클릭
-        BTN_ps4ps5.setOnClickListener(new View.OnClickListener() {
+        btn_ps4ps5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), Board_Platform_Ps4ps5_Activity.class);
@@ -61,7 +61,7 @@ public class BoardFragment extends Fragment {
         });
 
         //xbox버튼 클릭
-        BTN_xbox.setOnClickListener(new View.OnClickListener() {
+        btn_xbox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), Board_Platform_Xbox_Activity.class);
@@ -70,7 +70,7 @@ public class BoardFragment extends Fragment {
         });
 
         //etc버튼 클릭
-        BTN_etc.setOnClickListener(new View.OnClickListener() {
+        btn_etc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), Board_Platform_Etc_Activity.class);
