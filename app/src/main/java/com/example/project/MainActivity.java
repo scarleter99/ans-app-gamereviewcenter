@@ -31,9 +31,9 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity {
     FirebaseFirestore db;
 
-    TextView tv_signup;
-    TextView tv_sample; // 샘플코드
-    Button btn_login;
+    TextView TV_signup;
+    TextView TV_sample; // 샘플코드
+    Button BTN_login;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,9 +45,9 @@ public class MainActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
         // 회원가입 textview, 로그인 button 변수 설정
-        tv_signup = (TextView) findViewById(R.id.tv_signup);
-        tv_sample = (TextView) findViewById(R.id.tv_sample); // 샘플코드
-        btn_login = (Button) findViewById(R.id.btn_login);
+        TV_signup = (TextView) findViewById(R.id.tv_signup);
+        TV_sample = (TextView) findViewById(R.id.tv_sample); // 샘플코드
+        BTN_login = (Button) findViewById(R.id.btn_login);
     }
 
     // 로그인 버튼 클릭
@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
     public void useData(Map<String, Object> data, int what) {
         switch (what) {
             case 1:
-                tv_sample.setText(data.toString()); // 샘플코드
+                TV_sample.setText(data.toString()); // 샘플코드
         }
     }
 
@@ -132,49 +132,7 @@ public class MainActivity extends AppCompatActivity {
     public void useData(ArrayList<Map<String, Object>> data, int what) {
         switch (what) {
             case 1:
-                tv_sample.setText(data.toString()); // 샘플코드
+                TV_sample.setText(data.toString()); // 샘플코드
         }
-    }
-
-    private Handler mMainHandler = new Handler(Looper.getMainLooper()) {
-        @Override
-        public void handleMessage(Message msg) {
-            switch (msg.what) {
-                case 1:
-                    tv_signup.setText(msg.obj.toString());
-                    break;
-            }
-        }
-    };
-}
-
-class ClientThread extends Thread {
-
-    private Handler mMainHandler;
-    FirebaseFirestore db;
-    Map<String,Object> data;
-
-    public ClientThread(Handler mainHandler) {
-        db = FirebaseFirestore.getInstance();
-        mMainHandler = mainHandler;
-    }
-
-    public void getData(String collec, String doc) {
-        DocumentReference docRef = db.collection(collec).document(doc);
-        docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-            @Override
-            public void onSuccess(DocumentSnapshot documentSnapshot) {
-                Log.d("데이터 추가", documentSnapshot.getData().toString());
-                data = documentSnapshot.getData();
-                doPrintln();
-            }
-        });
-    }
-
-    public void doPrintln() {
-        Message msg = Message.obtain();
-        msg.what = 1;
-        msg.obj = data.toString() + "\n";
-        mMainHandler.sendMessage(msg);
     }
 }
