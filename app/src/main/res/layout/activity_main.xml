@@ -9,6 +9,17 @@
     android:background="#60CBF6"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/IV_applogo"
+        android:layout_width="148dp"
+        android:layout_height="227dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="131dp"
+        android:layout_marginTop="52dp"
+        app:srcCompat="@drawable/logo" />
+
     <EditText
         android:id="@+id/ET_inputid"
         android:layout_width="wrap_content"
@@ -48,7 +59,7 @@
         android:layout_marginTop="27dp"
         android:background="@drawable/btn_circle"
         android:backgroundTint="#FFD966"
-        android:onClick="loginButtonClicked"
+        android:onClick="btn_LoginClicked"
         android:text="@string/loginBtn"
         android:textColor="#FFFFFF" />
 
@@ -60,21 +71,37 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="23dp"
         android:layout_marginEnd="176dp"
-        android:onClick="signupTextviewClicked"
+        android:onClick="tv_SignupClicked"
         android:text="@string/signupTv"
-        android:textColor="#356577"
+        android:textColor="#FFFFFF"
         android:textSize="16sp"
         tools:ignore="TouchTargetSizeCheck" />
 
-    <ImageView
-        android:id="@+id/IV_applogo"
-        android:layout_width="148dp"
-        android:layout_height="227dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+    <Button
+        android:id="@+id/BTN_sample"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TV_signup"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="131dp"
-        android:layout_marginTop="52dp"
-        app:srcCompat="@drawable/logo" />
+        android:layout_marginTop="27dp"
+        android:background="@drawable/btn_circle"
+        android:backgroundTint="#FFD966"
+        android:onClick="btn_SampleClicked"
+        android:text="Sample 버튼"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/TV_sample"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/IV_applogo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="176dp"
+        android:text="Sample 텍스트뷰"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+
 
 </RelativeLayout>
