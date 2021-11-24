@@ -9,21 +9,21 @@ import android.widget.Spinner;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Board_Platform_Activity extends AppCompatActivity {
+public class BoardPlatformNintendoActivity extends AppCompatActivity {
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.board_platform);
+        setContentView(R.layout.board_platform_nintendo);
         //상단 바 제거
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
-        // 스피너
+
         String[] array = {"제목","작성자","게임명"};
-        Spinner SPN_pc = (Spinner) findViewById(R.id.spn_pc);
+        Spinner SPN_nintendo = (Spinner) findViewById(R.id.spn_nintendo);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, array);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
-        SPN_pc.setAdapter(adapter);
+        SPN_nintendo.setAdapter(adapter);
 
     }
 }

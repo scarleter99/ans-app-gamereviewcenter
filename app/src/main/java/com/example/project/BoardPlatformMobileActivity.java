@@ -9,21 +9,23 @@ import android.widget.Spinner;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Board_Platform_Xbox_Activity extends AppCompatActivity {
+public class BoardPlatformMobileActivity extends AppCompatActivity {
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.board_platform_xbox);
+        setContentView(R.layout.board_platform_mobile);
         //상단 바 제거
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
-
-        // 스피너
+        //스피너 설정
         String[] array = {"제목","작성자","게임명"};
-        Spinner SPN_xbox = (Spinner) findViewById(R.id.spn_xbox);
+        Spinner SPN_mobile = (Spinner) findViewById(R.id.spn_mobile);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, array);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
-        SPN_xbox.setAdapter(adapter);
+        SPN_mobile.setAdapter(adapter);
+
+
+
     }
 }

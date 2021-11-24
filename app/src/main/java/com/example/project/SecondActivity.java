@@ -25,7 +25,7 @@ public class SecondActivity extends AppCompatActivity {
         Fragment fragment_mypage;
         Fragment fragment_writing;
         fragment_board = new BoardFragment();
-        fragment_mypage = new MypageFragment();
+        fragment_mypage = new MyPageFragment();
         fragment_writing = new WritingFragement();
         //바텀네비게이션 변수 설정
         BottomNavigationView bnv_menu;

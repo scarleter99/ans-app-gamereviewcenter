@@ -28,7 +28,7 @@ public class BoardFragment extends Fragment {
         btn_pc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), Board_Platform_Activity.class);
+                Intent intent = new Intent(getActivity(), BoardPlatformPCActivity.class);
                 startActivity(intent);
             }
         });
@@ -37,7 +37,7 @@ public class BoardFragment extends Fragment {
         btn_mobile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), Board_Platform_Mobile_Activity.class);
+                Intent intent = new Intent(getActivity(), BoardPlatformMobileActivity.class);
                 startActivity(intent);
             }
         });
@@ -46,7 +46,7 @@ public class BoardFragment extends Fragment {
         btn_nintendo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), Board_Platform_Nintendo_Activity.class);
+                Intent intent = new Intent(getActivity(), BoardPlatformNintendoActivity.class);
                 startActivity(intent);
             }
         });
@@ -55,7 +55,7 @@ public class BoardFragment extends Fragment {
         btn_ps4ps5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), Board_Platform_Ps4ps5_Activity.class);
+                Intent intent = new Intent(getActivity(), BoardPlatformPSActivity.class);
                 startActivity(intent);
             }
         });
@@ -64,7 +64,7 @@ public class BoardFragment extends Fragment {
         btn_xbox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), Board_Platform_Xbox_Activity.class);
+                Intent intent = new Intent(getActivity(), BoardPlatformXboxActivity.class);
                 startActivity(intent);
             }
         });
@@ -73,7 +73,7 @@ public class BoardFragment extends Fragment {
         btn_etc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), Board_Platform_Etc_Activity.class);
+                Intent intent = new Intent(getActivity(), BoardPlatformEtcActivity.class);
                 startActivity(intent);
             }
         });
