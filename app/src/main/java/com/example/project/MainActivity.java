@@ -12,6 +12,8 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
@@ -66,15 +68,26 @@ public class MainActivity extends AppCompatActivity {
 
     // Firestore에 데이터 추가
     public void putData(String collec, String doc, String key, Object value) {
-        CollectionReference collecRef = db.collection(collec);
+        DocumentReference washingtonRef = db.collection(collec).document(doc);
         Map<String, Object> data1 = new HashMap<>();
-
         data1.put(key, value);
-        collecRef.document(doc).set(data1);
-        Log.d("데이터 추가", collec + ": "+ key + " => " + value);
+        washingtonRef
+                .update(doc, true)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d("데이터 추가", "DocumentSnapshot successfully updated!");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w("데이터 추가", "Error updating document", e);
+                    }
+                });
     }
 
-    // Firestore에서 데이터 가져오기
+    // Firestore에서 데이터 읽기
     public void getData(String collec, String doc, int what) {
         DocumentReference docRef = db.collection(collec).document(doc);
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
@@ -83,13 +96,13 @@ public class MainActivity extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
-                        Log.d("데이터 가져오기", "DocumentSnapshot data: " + document.getData());
+                        Log.d("데이터 읽기", "DocumentSnapshot data: " + document.getData());
                         useData(document.getData(), what);
                     } else {
-                        Log.d("데이터 가져오기", "No such document");
+                        Log.d("데이터 읽기", "No such document");
                     }
                 } else {
-                    Log.d("데이터 가져오기", "get failed with ", task.getException());
+                    Log.d("데이터 읽기", "get failed with ", task.getException());
                 }
             }
         });

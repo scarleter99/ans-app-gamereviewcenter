@@ -24,7 +24,7 @@ public class BoardFragment extends Fragment {
         btn_xbox = (ImageButton) view.findViewById(R.id.btn_xbox);
         btn_etc = (ImageButton) view.findViewById(R.id.btn_etc);
 
-        //pc버튼 클릭
+        // pc버튼 클릭
         btn_pc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -33,7 +33,7 @@ public class BoardFragment extends Fragment {
             }
         });
 
-        //mobile버튼 클릭
+        // mobile버튼 클릭
         btn_mobile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,7 +42,7 @@ public class BoardFragment extends Fragment {
             }
         });
 
-        //닌텐도버튼 클릭
+        // 닌텐도버튼 클릭
         btn_nintendo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,7 +51,7 @@ public class BoardFragment extends Fragment {
             }
         });
 
-        //플레이스테이션버튼 클릭
+        // 플레이스테이션버튼 클릭
         btn_ps4ps5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,7 +60,7 @@ public class BoardFragment extends Fragment {
             }
         });
 
-        //xbox버튼 클릭
+        // xbox버튼 클릭
         btn_xbox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,7 +69,7 @@ public class BoardFragment extends Fragment {
             }
         });
 
-        //etc버튼 클릭
+        // etc버튼 클릭
         btn_etc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
