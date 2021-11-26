@@ -17,6 +17,7 @@ public class SecondActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_second);
+
         //상단 타이틀바 제거
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();

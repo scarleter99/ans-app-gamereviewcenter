@@ -27,21 +27,19 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
-    FirebaseFirestore db;
 
+    FirebaseFirestore db;
     TextView TV_signup;
     TextView TV_sample; // 샘플코드
     Button BTN_login;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         db = FirebaseFirestore.getInstance();
-        Map<String, Object> data = new HashMap<>();
-        data.put("name", "alice");
-        putData("user", "zxcv", data);
-        updateData("user", "zxcv", "name", "eric");
+
 
         // 상단 타이틀바 제거
         ActionBar actionBar = getSupportActionBar();
@@ -112,7 +110,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
     }
-
 
     // Firestore에서 데이터 읽기
     public void getData(String collec, String doc, int what) {

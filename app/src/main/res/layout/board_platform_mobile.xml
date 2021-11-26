@@ -47,7 +47,8 @@
                 android:background="@color/white"
                 android:ems="10"
                 android:hint="검색어를 입력하세요"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:minHeight="48dp" />
 
             <Button
                 android:id="@+id/btn_search"
