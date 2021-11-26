@@ -38,6 +38,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         db = FirebaseFirestore.getInstance();
+        Map<String, Object> data = new HashMap<>();
+        data.put("name", "alice");
+        putData("user", "zxcv", data);
+        updateData("user", "zxcv", "name", "eric");
 
         // 상단 타이틀바 제거
         ActionBar actionBar = getSupportActionBar();
@@ -67,16 +71,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // Firestore에 데이터 추가
-    public void putData(String collec, String doc, String key, Object value) {
-        DocumentReference washingtonRef = db.collection(collec).document(doc);
-        Map<String, Object> data1 = new HashMap<>();
-        data1.put(key, value);
-        washingtonRef
-                .update(doc, true)
+    // 사용법:
+    // Map<String, Object> data = new HashMap<>();
+    // data.put(key1, value1);
+    // data.put(key2, value2);
+    // putData("user", "zxcv", data);
+    public void putData(String collec, String doc, Object data) {
+        DocumentReference docRef = db.collection(collec).document(doc);
+        docRef
+                .set(data)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        Log.d("데이터 추가", "DocumentSnapshot successfully updated!");
+                        Log.d("데이터 추가", "DocumentSnapshot successfully written!");
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -86,6 +93,26 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
     }
+
+    // Firestore에 데이터 업데이트
+    public void updateData(String collec, String doc, String key, String value) {
+        DocumentReference docRef = db.collection(collec).document(doc);
+        docRef
+                .update(key, value)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d("데이터 업데이트", "DocumentSnapshot successfully updated!");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w("데이터 업데이트", "Error updating document", e);
+                    }
+                });
+    }
+
 
     // Firestore에서 데이터 읽기
     public void getData(String collec, String doc, int what) {
