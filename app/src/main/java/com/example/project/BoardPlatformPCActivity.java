@@ -36,7 +36,6 @@ public class BoardPlatformPCActivity extends AppCompatActivity {
     Button firstButton;
     ScrollView scrollView;
     LinearLayout layout_pc;
-    Context context;
 
     @Override
 
@@ -47,7 +46,7 @@ public class BoardPlatformPCActivity extends AppCompatActivity {
         scrollView = (ScrollView) findViewById(R.id.scrollView);
         firstButton = (Button) findViewById(R.id.btn_samplereview);
         layout_pc = (LinearLayout) findViewById(R.id.layout_pc);
-        getAllData("pc");
+        getAllData("PC");
         //상단 바 제거
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
@@ -73,63 +72,6 @@ public class BoardPlatformPCActivity extends AppCompatActivity {
         });
 
     }
-    public void putData(String collec, String doc, Object data) {
-        DocumentReference docRef = db.collection(collec).document(doc);
-        docRef
-                .set(data)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        Log.d("데이터 추가", "DocumentSnapshot successfully written!");
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.w("데이터 추가", "Error updating document", e);
-                    }
-                });
-    }
-
-    // Firestore에 데이터 업데이트
-    public void updateData(String collec, String doc, String key, String value) {
-        DocumentReference docRef = db.collection(collec).document(doc);
-        docRef
-                .update(key, value)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        Log.d("데이터 업데이트", "DocumentSnapshot successfully updated!");
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.w("데이터 업데이트", "Error updating document", e);
-                    }
-                });
-    }
-
-    // Firestore에서 데이터 읽기
-    public void getData(String collec, String doc, int what) {
-        DocumentReference docRef = db.collection(collec).document(doc);
-        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                if (task.isSuccessful()) {
-                    DocumentSnapshot document = task.getResult();
-                    if (document.exists()) {
-                        Log.d("데이터 읽기", "DocumentSnapshot data: " + document.getData());
-                        useData(document.getData());
-                    } else {
-                        Log.d("데이터 읽기", "No such document");
-                    }
-                } else {
-                    Log.d("데이터 읽기", "get failed with ", task.getException());
-                }
-            }
-        });
-    }
 
     // Firestore에서 데이터 모두가져오기
     public void getAllData(String collec) {
@@ -149,17 +91,20 @@ public class BoardPlatformPCActivity extends AppCompatActivity {
                     }
                 });
     }
-
-    // Firestore에서 가져온 데이터 사용
-    public void useData(Map<String, Object> data) {
-
-    }
-
     // Firestore에서 가져온 모든 데이터 사용
     public void useData(ArrayList<Map<String, Object>> data) {
+        Button btn;
         Map<String, Object> target = data.get(0);
-        String[] splitID = target.toString().split(",");
-        String[] splitID2 = splitID[0].split("=");
-        firstButton.setText(splitID2[0]);
+        String buttonText = ""; // 버튼에 기록될 문자열
+        String[] splitID = target.toString().split("");
+        firstButton.setText(splitID[0]);//제목출력
+        for (int i = 1; i < data.size();i++){
+            btn = new Button(this);
+            target = data.get(i);
+            buttonText = ""; // 버튼에 기록될 문자열
+            splitID = target.toString().split("");
+            btn.setText(splitID[0]);//제목출력
+            layout_pc.addView(btn);
+        }
     }
 }
