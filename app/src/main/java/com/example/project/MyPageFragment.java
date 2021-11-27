@@ -199,6 +199,5 @@ public class MyPageFragment extends Fragment {
             case 1:
                 //MP_ID.setText(data.toString()); // 샘플코드
         }
-
     }
 }

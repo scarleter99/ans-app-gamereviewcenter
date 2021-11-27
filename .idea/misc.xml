@@ -48,12 +48,14 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/Project/app/src/main/res/layout/activity_main_second.xml" value="0.27239583333333334" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Project/app/src/main/res/layout/board.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Project/app/src/main/res/layout/board_platform.xml" value="0.27239583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Project/app/src/main/res/layout/board_platform_etc.xml" value="0.27239583333333334" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Project/app/src/main/res/layout/board_platform_mobile.xml" value="0.24547101449275363" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Project/app/src/main/res/layout/board_platform_nintendo.xml" value="0.24547101449275363" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Project/app/src/main/res/layout/board_platform_pc.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Project/app/src/main/res/layout/board_platform_ps4ps5.xml" value="0.24547101449275363" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Project/app/src/main/res/layout/board_platform_review.xml" value="0.27239583333333334" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Project/app/src/main/res/layout/board_platform_xbox.xml" value="0.24547101449275363" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/Project/app/src/main/res/layout/mypage.xml" value="0.17572463768115942" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Project/app/src/main/res/layout/mypage.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Project/app/src/main/res/layout/mypage_fix.xml" value="0.27239583333333334" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Project/app/src/main/res/layout/signin.xml" value="0.17572463768115942" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Project/app/src/main/res/layout/signup.xml" value="0.27239583333333334" />

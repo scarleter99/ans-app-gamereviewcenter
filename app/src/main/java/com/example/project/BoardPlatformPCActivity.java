@@ -1,9 +1,7 @@
 package com.example.project;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.Spinner;
 
 import androidx.appcompat.app.ActionBar;
@@ -14,7 +12,7 @@ public class BoardPlatformPCActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.board_platform);
+        setContentView(R.layout.board_platform_pc);
         //상단 바 제거
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();

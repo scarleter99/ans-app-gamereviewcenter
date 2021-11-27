@@ -92,7 +92,7 @@ public class WritingFragement extends Fragment implements View.OnClickListener{
                 imgLauncher.launch(intent);
                 break;
             case R.id.btn_done:
-                putImage("PC", "review1"); //샘플코드
+                putImage("review1"); //샘플코드
                 break;
         }
     }
@@ -109,14 +109,12 @@ public class WritingFragement extends Fragment implements View.OnClickListener{
         spn_kindreview.setAdapter(adapter2);
     }
 
-    public void putImage(String platform, String reviewNum) {
+    public void putImage(String reviewNum) {
         try {
             st = FirebaseStorage.getInstance();
             StorageReference storageRef = st.getReference();
-            //StorageReference mountainsRef = storageRef.child("review1.jpg");
-            //StorageReference mountainImagesRef = storageRef.child("PC/review1.jpg");
 
-            StorageReference imageRef = storageRef.child(platform + "/"+ reviewNum + ".PNG");
+            StorageReference imageRef = storageRef.child("PC/"+ reviewNum + ".PNG");
             UploadTask uploadTask = imageRef.putFile(imageUri);
             uploadTask.addOnFailureListener(new OnFailureListener() {
                 @Override
