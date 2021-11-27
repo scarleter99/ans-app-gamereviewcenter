@@ -6,7 +6,15 @@
     android:layout_height="match_parent"
     android:background="#60CBF6">
 
+    <ScrollView
+        android:id="@+id/ScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </ScrollView>
+
     <LinearLayout
+        android:id="@+id/layout_pc"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -38,7 +46,7 @@
                 android:id="@+id/spn_pc"
                 android:layout_width="120dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:layout_weight="1" />
 
             <EditText
                 android:id="@+id/et_search"
@@ -67,22 +75,17 @@
             android:layout_height="2dp"
             android:background="#B9E6F8" />
 
-        <ScrollView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <LinearLayout
+            <Button
+                android:id="@+id/btn_samplereview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" >
-
-                <Button
-                    android:id="@+id/btn_samplereview"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Button" />
-            </LinearLayout>
-        </ScrollView>
+                android:text="업로드된 글이 없습니다." />
+        </LinearLayout>
 
     </LinearLayout>
 

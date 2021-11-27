@@ -71,7 +71,7 @@ public class MyPageFragment extends Fragment {
     }
 
     public void SetMyPage(View v){
-        getData("user", "asdf", 1);
+        getData("user", "asdf" , 1);
         getData("user", "asdf", 2);
         getData("user", "asdf", 3);
         getData("user", "asdf", 4);

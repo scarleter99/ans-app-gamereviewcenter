@@ -81,7 +81,7 @@
                     android:id="@+id/btn_samplereview_mobile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Button" />
+                    android:text="업로드된 글이 없습니다." />
             </LinearLayout>
         </ScrollView>
 

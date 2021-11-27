@@ -13,6 +13,7 @@
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/MobileProject/app/src/main/res/layout/board_platform_mobile.xml" value="0.38645833333333335" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/MobileProject/app/src/main/res/layout/board_platform_moblie.xml" value="0.38645833333333335" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/MobileProject/app/src/main/res/layout/board_platform_nintendo.xml" value="0.38645833333333335" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/MobileProject/app/src/main/res/layout/board_platform_pc.xml" value="0.38645833333333335" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/MobileProject/app/src/main/res/layout/board_platform_ps.xml" value="0.38645833333333335" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/MobileProject/app/src/main/res/layout/board_platform_ps4ps5.xml" value="0.38645833333333335" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/MobileProject/app/src/main/res/layout/board_platform_review.xml" value="0.38645833333333335" />
@@ -36,30 +37,18 @@
         <entry key="..\:/Users/kjmdk/Client/app/src/main/res/layout/signup.xml" value="0.18568840579710144" />
         <entry key="..\:/Users/kjmdk/Client/app/src/main/res/layout/writing.xml" value="0.33" />
         <entry key="..\:/Users/kjmdk/Client/app/src/main/res/menu/bottom_nav.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/mmc79/AndroidStudioProjects/Client/app/src/main/res/layout/activity_main.xml" value="0.5536458333333333" />
-        <entry key="..\:/Users/mmc79/AndroidStudioProjects/Client/app/src/main/res/layout/board.xml" value="0.5536458333333333" />
-        <entry key="..\:/Users/mmc79/AndroidStudioProjects/Client/app/src/main/res/layout/board_platform.xml" value="0.5536458333333333" />
-        <entry key="..\:/Users/mmc79/AndroidStudioProjects/Client/app/src/main/res/layout/mypage.xml" value="0.5536458333333333" />
-        <entry key="..\:/Users/mmc79/AndroidStudioProjects/Client/app/src/main/res/layout/signup.xml" value="0.5536458333333333" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Project/app/src/main/res/drawable-v24/ic_baseline_account_circle_24.xml" value="0.28854166666666664" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Project/app/src/main/res/drawable-v24/ic_baseline_dashboard_24.xml" value="0.28854166666666664" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Project/app/src/main/res/drawable-v24/ic_baseline_post_add_24.xml" value="0.28854166666666664" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Project/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/Project/app/src/main/res/layout/activity_main_second.xml" value="0.27239583333333334" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Project/app/src/main/res/layout/board.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Project/app/src/main/res/layout/board_platform.xml" value="0.27239583333333334" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/Project/app/src/main/res/layout/board_platform_etc.xml" value="0.27239583333333334" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/Project/app/src/main/res/layout/board_platform_mobile.xml" value="0.24547101449275363" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/Project/app/src/main/res/layout/board_platform_nintendo.xml" value="0.24547101449275363" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/Project/app/src/main/res/layout/board_platform_pc.xml" value="0.25" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/Project/app/src/main/res/layout/board_platform_ps4ps5.xml" value="0.24547101449275363" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Project/app/src/main/res/layout/board_platform_review.xml" value="0.27239583333333334" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/Project/app/src/main/res/layout/board_platform_xbox.xml" value="0.24547101449275363" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/Project/app/src/main/res/layout/mypage.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Project/app/src/main/res/layout/mypage.xml" value="0.17572463768115942" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Project/app/src/main/res/layout/mypage_fix.xml" value="0.27239583333333334" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Project/app/src/main/res/layout/signin.xml" value="0.17572463768115942" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Project/app/src/main/res/layout/signup.xml" value="0.27239583333333334" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/Project/app/src/main/res/layout/writing.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Project/app/src/main/res/layout/writing.xml" value="0.1" />
       </map>
     </option>
   </component>
