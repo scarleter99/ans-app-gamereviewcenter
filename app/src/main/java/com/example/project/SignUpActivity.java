@@ -30,7 +30,6 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 public class SignUpActivity extends AppCompatActivity {
-    Boolean isequalpass;
     FirebaseFirestore db;
     TextView tv_signup;
     EditText et_id, et_password,et_repassword,et_nickname, et_email;
@@ -63,10 +62,12 @@ public class SignUpActivity extends AppCompatActivity {
         btn_nicknamecheck = (Button) findViewById(R.id.btn_nicknamecheck);
         btn_idcheck = (Button) findViewById(R.id.btn_idcheck);
 
-        // 회원 가입 버튼 클릭
-        btn_signup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        // 버튼 클릭 이벤트
+    }
+    // 버튼 클릭 이벤트
+    public void buttonClicked(View v) { //implements View.OnClickListener
+        switch (v.getId()) {
+            case R.id.btn_signup:
                 // 아이디 중복확인
                 if(!isidcheck || !tmpid.equals(et_id.getText().toString())){
                     isidcheck = false;
@@ -104,19 +105,15 @@ public class SignUpActivity extends AppCompatActivity {
                     startActivity(intent);
                     return;
                 }
-            }
+            case R.id.btn_idcheck:
+                doubleCheck("user", 0);
+                break;
+            case R.id.btn_nicknamecheck:
+                doubleCheck("user", 1);
+                break;
+        }
+    }
 
-        });
-
-    }
-    // id 중복 버튼 클릭 함수
-    public void btn_idcheckClicked(View v){
-        doubleCheck("user", 0);
-    }
-    // 닉네임 중복 버튼 클릭 함수
-    public void btn_nicknamecheckClicked(View v){
-        doubleCheck("user", 1);
-    }
     // 비밀번호와 비밀번호 재입력이 같은지 확인하는 함수
     private boolean isequalPassword(String pass, String repass){
         if(pass.equals(repass)){
@@ -202,7 +199,6 @@ public class SignUpActivity extends AppCompatActivity {
                                     // 아이디 형식 확인
                                     else if(!idCheck(et_id.getText().toString())){
                                         isidcheck = false;
-                                        return;
                                     }
                                     else {
                                         Toast.makeText(getApplicationContext(), "사용할 수 있는 아이디입니다.", Toast.LENGTH_SHORT).show();
@@ -232,6 +228,7 @@ public class SignUpActivity extends AppCompatActivity {
                 }
                 });
         }
+
     }
 
 
