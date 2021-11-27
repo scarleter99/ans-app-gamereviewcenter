@@ -165,6 +165,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // Firestore에서 가져온 데이터 사용
+    //asd
     public void useData(Map<String, Object> data, int what) {
         switch (what) {
             //PW
