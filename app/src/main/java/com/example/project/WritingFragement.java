@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
@@ -25,11 +26,16 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.Glide;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+
+import java.io.InputStream;
 
 public class WritingFragement extends Fragment implements View.OnClickListener{
     FirebaseStorage st;
@@ -38,7 +44,7 @@ public class WritingFragement extends Fragment implements View.OnClickListener{
 
     Spinner spn_writing;
     Spinner spn_kindreview;
-    ImageView iv_playtime;
+    ImageView iv_putplaytime;
     Button btn_Done;
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -48,25 +54,45 @@ public class WritingFragement extends Fragment implements View.OnClickListener{
         platform_initspinner();
         kindreview_initspinner();
 
-        iv_playtime = view.findViewById(R.id.iv_playtime);
+        iv_putplaytime = view.findViewById(R.id.iv_putplaytime);
         btn_Done = view.findViewById(R.id.btn_done);
 
-        iv_playtime.setOnClickListener(this);
+        iv_putplaytime.setOnClickListener(this);
         btn_Done.setOnClickListener(this);
+
+        // 샘플코드
+        try {
+            st = FirebaseStorage.getInstance();
+            StorageReference stRef = st.getReference("PC/review1.PNG");
+            stRef.getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
+                @Override
+                public void onComplete(@NonNull Task<Uri> task) {
+                    if (task.isSuccessful()) {
+                        // Glide 이용하여 이미지뷰에 로딩
+                        Glide.with(getActivity()).load(task.getResult()).override(600, 600).into(iv_putplaytime);
+                        Log.d("사진 읽기", "Success");
+                    } else {
+                        Log.d("사진 읽기", "Failure");
+                    }
+                }
+            });
+        } catch (Exception e) {
+            Log.d("사진 읽기", "Failure");
+        }
 
         return view;
     }
 
     public void onClick(View v) { //implements View.OnClickListener
         switch (v.getId()) {
-            case R.id.iv_playtime:
+            case R.id.iv_putplaytime:
                 Intent intent = new Intent();
                 intent.setType("image/*");
                 intent.setAction(Intent.ACTION_GET_CONTENT);
-                launcher.launch(intent);
+                imgLauncher.launch(intent);
                 break;
             case R.id.btn_done:
-                putImage("PC", "review2"); //샘플코드
+                putImage("PC", "review1"); //샘플코드
                 break;
         }
     }
@@ -84,28 +110,32 @@ public class WritingFragement extends Fragment implements View.OnClickListener{
     }
 
     public void putImage(String platform, String reviewNum) {
-        st = FirebaseStorage.getInstance();
+        try {
+            st = FirebaseStorage.getInstance();
+            StorageReference storageRef = st.getReference();
+            //StorageReference mountainsRef = storageRef.child("review1.jpg");
+            //StorageReference mountainImagesRef = storageRef.child("PC/review1.jpg");
 
-        StorageReference storageRef = st.getReference();
-        //StorageReference mountainsRef = storageRef.child("review1.jpg");
-        //StorageReference mountainImagesRef = storageRef.child("PC/review1.jpg");
+            StorageReference imageRef = storageRef.child(platform + "/"+ reviewNum + ".PNG");
+            UploadTask uploadTask = imageRef.putFile(imageUri);
+            uploadTask.addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception exception) {
+                    Log.d("사진 추가", "Failure");
+                }
+            }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    Log.d("사진 추가", "Success");
+                }
+            });
+        } catch (Exception e){
+            Log.d("사진 추가", "Failure");
 
-        StorageReference imageRef = storageRef.child(platform + "/"+ reviewNum + ".jpg");
-        UploadTask uploadTask = imageRef.putFile(imageUri);
-        uploadTask.addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception exception) {
-                Log.d("사진 추가", "Failure");
-            }
-        }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                Log.d("사진 추가", "Success");
-            }
-        });
+        }
     }
 
-    ActivityResultLauncher<Intent> launcher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
+    ActivityResultLauncher<Intent> imgLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
             new ActivityResultCallback<ActivityResult>()
             {
                 @Override
@@ -115,7 +145,7 @@ public class WritingFragement extends Fragment implements View.OnClickListener{
                     {
                         Intent intent = result.getData();
                         imageUri = intent.getData();
-                        iv_playtime.setImageURI(imageUri);
+                        iv_putplaytime.setImageURI(imageUri);
                     }
                 }
             });

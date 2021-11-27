@@ -130,7 +130,7 @@
                 android:textColor="#60CBF6" />
 
             <ImageView
-                android:id="@+id/iv_playtime"
+                android:id="@+id/iv_putplaytime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
