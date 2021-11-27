@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -31,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
     FirebaseFirestore db;
     TextView TV_signup;
     TextView TV_sample; // 샘플코드
+    EditText et_inputID;
+    EditText et_inputPW;
     Button BTN_login;
 
     @Override
@@ -48,10 +52,14 @@ public class MainActivity extends AppCompatActivity {
         TV_signup = (TextView) findViewById(R.id.tv_signup);
         TV_sample = (TextView) findViewById(R.id.tv_sample); // 샘플코드
         BTN_login = (Button) findViewById(R.id.btn_login);
+        et_inputID = (EditText) findViewById(R.id.et_inputid);
+        et_inputPW = (EditText) findViewById(R.id.et_inputpassword);
     }
 
     // 로그인 버튼 클릭
     public void btn_LoginClicked(View v) {
+        String str = TV_sample.getText().toString();
+        Toast.makeText(getApplicationContext(),str,Toast.LENGTH_SHORT);
         Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
         startActivity(intent);
     }
@@ -64,8 +72,11 @@ public class MainActivity extends AppCompatActivity {
 
     // 샘플 코드
     public void btn_SampleClicked(View v) {
-        //getData("user", "asdf", 1);
-        getAllData("user", 1);
+        getData("user", "asdf", 1);
+        getData("user", "asdf", 2);
+        getData("user", "asdf", 3);
+        getData("user", "asdf", 4);
+        //getAllData("user", 1);
     }
 
     // Firestore에 데이터 추가
@@ -156,8 +167,33 @@ public class MainActivity extends AppCompatActivity {
     // Firestore에서 가져온 데이터 사용
     public void useData(Map<String, Object> data, int what) {
         switch (what) {
+            //PW
             case 1:
-                TV_sample.setText(data.toString()); // 샘플코드
+                String[] splitID = data.toString().split(",");
+                String[] splitID2 = splitID[2].split("=");
+                TV_sample.setText(splitID2[1]); // 샘플코드
+                et_inputID.setText(splitID2[1]);
+                break;
+            //NickName
+            case 2:
+                String[] splitNickName = data.toString().split(",");
+                String[] splitNickName2 = splitNickName[1].split("=");
+                TV_sample.append(" "+splitNickName2[1]+" "); // 샘플코드
+                break;
+            //Name
+            case 3:
+                String[] splitPW = data.toString().split(",");
+                String[] splitPW2 = splitPW[0].split("=");
+                TV_sample.append(splitPW2[1]+" "); // 샘플코드
+                et_inputPW.setText(splitPW2[1]);
+                break;
+            //Email
+            case 4:
+                String[] splitEmail = data.toString().split(",");
+                String[] splitEmail2 = splitEmail[3].split("=");
+                String splitEmail3 = splitEmail2[1].replace("}","");
+                TV_sample.append(splitEmail3+" "); // 샘플코드
+                break;
         }
     }
 
