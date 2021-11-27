@@ -77,31 +77,5 @@
         android:textSize="16sp"
         tools:ignore="TouchTargetSizeCheck" />
 
-    <Button
-        android:id="@+id/btn_sample"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_signup"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="27dp"
-        android:background="@drawable/btn_circle"
-        android:backgroundTint="#FFD966"
-        android:onClick="btn_SampleClicked"
-        android:text="Sample 버튼"
-        android:textColor="#FFFFFF" />
-
-    <TextView
-        android:id="@+id/tv_sample"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/iv_applogo"
-        android:layout_centerHorizontal="true"
-        android:layout_marginEnd="176dp"
-        android:text="Sample 텍스트뷰"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        tools:ignore="TouchTargetSizeCheck" />
-
-
 
 </RelativeLayout>

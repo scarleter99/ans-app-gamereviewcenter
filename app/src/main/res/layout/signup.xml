@@ -8,7 +8,7 @@
     android:layout_gravity="center"
     android:background="#60CBF6"
     android:gravity="center"
-    tools:context=".MainActivity">
+    tools:context=".SignUpActivity">
 
     <TextView
         android:id="@+id/tv_signup"
@@ -129,34 +129,71 @@
         android:background="@drawable/btn_circle"
         android:backgroundTint="#FFD966"
         android:text="@string/signupBtn"
+        android:onClick="buttonClicked"
         android:textColor="#FFFFFF" />
 
     <Button
         android:id="@+id/btn_idcheck"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="37dp"
         android:layout_below="@+id/tv_signup"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="10dp"
         android:layout_marginTop="46dp"
-        android:layout_marginEnd="7dp"
+        android:layout_marginEnd="16dp"
         android:layout_toEndOf="@+id/et_inputid"
         android:background="@drawable/layout_writingcircle"
+        android:onClick="buttonClicked"
         android:text="@string/idCheckBtn"
         android:textColor="#FFFFFF" />
 
     <Button
         android:id="@+id/btn_nicknamecheck"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="36dp"
         android:layout_below="@+id/et_repassword"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="10dp"
         android:layout_marginTop="38dp"
-        android:layout_marginEnd="7dp"
+        android:layout_marginEnd="16dp"
         android:layout_toEndOf="@+id/et_nickname"
         android:background="@drawable/layout_writingcircle"
+        android:inputType="textEmailAddress"
+        android:onClick="buttonClicked"
         android:text="@string/nickNameCheckBtn"
         android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/tv_idcheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_inputid"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="109dp"
+        android:layout_marginTop="-6dp"
+        android:text="@string/tv_idcheck"
+        android:textSize="11sp" />
+
+    <TextView
+        android:id="@+id/tv_nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_nickname"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="111dp"
+        android:layout_marginTop="-5dp"
+        android:text="닉네임은 2~8자 한글, 영어, 숫자 조합만 가능합니다."
+        android:textSize="11sp" />
+
+    <TextView
+        android:id="@+id/tv_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_inputpassword"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="-7dp"
+        android:text="비밀번호는 숫자, 문자, 특수문자 포함 8~15자리 이내이어야 합니다."
+        android:textSize="10sp" />
 
 </RelativeLayout>
