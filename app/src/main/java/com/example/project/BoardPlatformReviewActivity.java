@@ -14,12 +14,18 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+
+import java.util.Map;
 
 public class BoardPlatformReviewActivity extends AppCompatActivity {
 
     FirebaseStorage st;
+    FirebaseFirestore db;
     Uri imageUri;
 
     ImageView iv_getplaytime;
@@ -56,6 +62,29 @@ public class BoardPlatformReviewActivity extends AppCompatActivity {
             });
         } catch (Exception e) {
             Log.d("사진 읽기", "Failure");
+        }
     }
+    public void getData(String collec, String doc, int what) {
+        DocumentReference docRef = db.collection(collec).document(doc);
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        Log.d("데이터 읽기", "DocumentSnapshot data: " + document.getData());
+                        useData(document.getData(), what);
+                    } else {
+                        Log.d("데이터 읽기", "No such document");
+                    }
+                } else {
+                    Log.d("데이터 읽기", "get failed with ", task.getException());
+                }
+            }
+        });
+    }
+
+    public void useData(Map<String, Object> data, int what) {
+
     }
 }
