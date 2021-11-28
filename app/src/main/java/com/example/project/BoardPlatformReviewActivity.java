@@ -98,6 +98,7 @@ public class BoardPlatformReviewActivity extends AppCompatActivity {
         for (int i = 0; i < keydata.size(); i++){
             prefData = pref.getString(keydata.get(i), "");
             if (!prefData.equals("")){
+                tv_pl_re_platform.setText(keydata.get(i));
                 splitID = prefData.split(",");
                 for (int k = 0; k < splitID.length; k++){// 괄호제거
                     if (k == 0){
@@ -116,7 +117,8 @@ public class BoardPlatformReviewActivity extends AppCompatActivity {
                         splitID[j] = splitID[j].replace("writer=", "");
                         tv_writer.setText(splitID[j]);
                     } else if (splitID[j].contains("attribute")){
-                        splitID[j].replace("attribute=","");
+                        splitID[j]=splitID[j].replace("attribute=[","");
+                        splitID[j+7] = splitID[j+7].replace("]","");
                         tv_content1.setText(splitID[j]);
                         tv_content2.setText(splitID[j+1]);
                         tv_content3.setText(splitID[j+2]);

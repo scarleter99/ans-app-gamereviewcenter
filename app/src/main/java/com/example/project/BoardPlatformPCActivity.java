@@ -67,6 +67,8 @@ public class BoardPlatformPCActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "글을 등록해주세요!", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getApplicationContext(), BoardPlatformPCActivity.class);
                     startActivity(intent);
+                } else if(comment.equals("게임이름 | 작성자 | 제목")){
+
                 } else {
                     Intent intent = new Intent(getApplicationContext(), BoardPlatformReviewActivity.class);
                     startActivity(intent);
