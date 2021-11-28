@@ -60,26 +60,6 @@ public class WritingFragement extends Fragment implements View.OnClickListener{
         iv_putplaytime.setOnClickListener(this);
         btn_Done.setOnClickListener(this);
 
-        // 샘플코드
-        try {
-            st = FirebaseStorage.getInstance();
-            StorageReference stRef = st.getReference("PC/review1.PNG");
-            stRef.getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
-                @Override
-                public void onComplete(@NonNull Task<Uri> task) {
-                    if (task.isSuccessful()) {
-                        // Glide 이용하여 이미지뷰에 로딩
-                        Glide.with(getActivity()).load(task.getResult()).override(600, 600).into(iv_putplaytime);
-                        Log.d("사진 읽기", "Success");
-                    } else {
-                        Log.d("사진 읽기", "Failure");
-                    }
-                }
-            });
-        } catch (Exception e) {
-            Log.d("사진 읽기", "Failure");
-        }
-
         return view;
     }
 
