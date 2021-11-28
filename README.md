@@ -11,6 +11,7 @@
 - SecondActivity 구현 내용:
 	- 로그인 성공 시 첫 출력 화면을 게시판 페이지(BoardFragment)로 설정 
 	- bottomNavigationBar 기능 구현 (게시판, 글 작성, 마이 페이지 각각의 아이콘 클릭시 화면 전환)
+	- onBackPressed(): 뒤로가기 버튼 클릭 시 "로그아웃 하시겠습니까?" 알림 출력, '예' 클릭 시 로그아웃 메시지 출력과 함께 로그인 페이지로 이동
 	
 - SignUpActivity 구현 내용:
 	- idCheck(): 아이디 형식을 5~20자, 숫자와 소문자 조합으로 설정
