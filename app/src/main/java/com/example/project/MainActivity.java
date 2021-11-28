@@ -29,7 +29,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
-
+    Boolean islogin = false;
     FirebaseFirestore db;
     TextView tv_signup;
     Button btn_login;
@@ -59,17 +59,14 @@ public class MainActivity extends AppCompatActivity {
                 login("user");
                 break;
             case R.id.tv_signup:
-                Intent intent = new Intent(getApplicationContext(), SignUpActivity.class);
-                startActivity(intent);
+                Intent intent2 = new Intent(getApplicationContext(), SignUpActivity.class);
+                startActivity(intent2);
+                break;
 
         }
     }
 
-    // 회원가입 텍스트뷰 클릭
-    public void tv_SignupClicked(View v) {
-        Intent intent = new Intent(getApplicationContext(), SignUpActivity.class);
-        startActivity(intent);
-    }
+    // 로그인함수
     private void login(String collec){
         db.collection(collec)
                 .get()
@@ -80,20 +77,25 @@ public class MainActivity extends AppCompatActivity {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 if(document.getId().equals(et_inputid.getText().toString())){
                                     if(document.get("pw").equals(et_inputpass.getText().toString())){
+                                        islogin = true;
                                         Toast.makeText(getApplicationContext(),"로그인 성공", Toast.LENGTH_SHORT).show();
                                         Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
                                         startActivity(intent);
                                         return;
                                     }
                                     else{
-                                        Toast.makeText(getApplicationContext(),"잘못된 비밀번호 입니다.", Toast.LENGTH_SHORT).show();
+                                        islogin = false;
+                                        Toast.makeText(getApplicationContext(),"비밀번호가 잘못되었습니다.", Toast.LENGTH_SHORT).show();
                                         return;
                                     }
                                 }
                                 else{
-                                    Toast.makeText(getApplicationContext(),"없는 아이디 입니다.", Toast.LENGTH_SHORT).show();
-                                    return;
+                                    islogin = false;
+                                    continue;
                                 }
+                            }
+                            if(!islogin){
+                                Toast.makeText(getApplicationContext(),"아이디가 없습니다.", Toast.LENGTH_SHORT).show();
                             }
                         } else {
                             Log.d("데이터 모두 읽기", "Error getting documents: ", task.getException());
@@ -101,4 +103,11 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
     }
+
+    // 회원가입 텍스트뷰 클릭
+    public void tv_SignupClicked(View v) {
+        Intent intent = new Intent(getApplicationContext(), SignUpActivity.class);
+        startActivity(intent);
+    }
+
 }
