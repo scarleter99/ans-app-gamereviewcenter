@@ -17,6 +17,17 @@
         android:textColor="#FFFFFF"
         android:textSize="25sp" />
 
+    <TextView
+        android:id="@+id/mp_chkid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="74dp"
+        android:layout_marginTop="30dp"
+        android:minWidth="50dp"
+        android:visibility="visible" />
+
     <TableLayout
         android:id="@+id/mypage_table"
         android:layout_width="355dp"
@@ -156,9 +167,9 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="221dp"
+        android:background="@drawable/btn_circle"
         android:text="확인"
         android:textColor="#FFFFFF"
-        android:textSize="24dp"
-        android:background="@drawable/btn_circle"/>
+        android:textSize="24dp" />
 
 </RelativeLayout>

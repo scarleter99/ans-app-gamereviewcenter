@@ -1,6 +1,7 @@
 package com.example.project;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -34,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
     TextView tv_signup;
     Button btn_login;
     EditText et_inputid, et_inputpass;
+    SharedPreferences spref;
+    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +44,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         db = FirebaseFirestore.getInstance();
-
+        spref = getSharedPreferences("gref", MODE_PRIVATE);
+        editor = spref.edit();
 
         // 상단 타이틀바 제거
         ActionBar actionBar = getSupportActionBar();
@@ -79,6 +83,10 @@ public class MainActivity extends AppCompatActivity {
                                     if(document.get("pw").equals(et_inputpass.getText().toString())){
                                         islogin = true;
                                         Toast.makeText(getApplicationContext(),"로그인 성공", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getApplicationContext(),document.get("nickname").toString(), Toast.LENGTH_SHORT).show();
+                                        editor.putString("editText_id", et_inputid.getText().toString());
+                                        editor.putString("writer", document.get("nickname").toString());
+                                        editor.commit();
                                         Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
                                         startActivity(intent);
                                         return;

@@ -1,7 +1,9 @@
 package com.example.project;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -25,7 +27,6 @@ import androidx.fragment.app.Fragment;
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 
-import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -54,6 +55,8 @@ public class WritingFragement extends Fragment implements View.OnClickListener{
     ImageView iv_putplaytime;
     Button btn_Done;
     EditText WR_title,WR_gametitle,WR_attr1,WR_attr2,WR_attr3,WR_attr4,WR_attr5,WR_attr6,WR_attr7,WR_attr8;
+    String writer;
+    SharedPreferences spref;
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.writing, container, false);
@@ -71,6 +74,8 @@ public class WritingFragement extends Fragment implements View.OnClickListener{
         WR_attr7 = (EditText) view.findViewById(R.id.tv_content7);
         WR_attr8 = (EditText) view.findViewById(R.id.tv_content8);
         rb = (RatingBar) view.findViewById(R.id.rb_rating);
+        db = FirebaseFirestore.getInstance();
+        spref = this.getActivity().getSharedPreferences("gref", Context.MODE_PRIVATE);
 
         iv_putplaytime = view.findViewById(R.id.iv_putplaytime);
         btn_Done = view.findViewById(R.id.btn_done);
@@ -94,7 +99,52 @@ public class WritingFragement extends Fragment implements View.OnClickListener{
                 Map<String, Object> data = new HashMap<>();
                 String spn = spn_writing.getSelectedItem().toString();
                 float f_rating = rb.getRating();
-                Toast.makeText(getContext(),spn,Toast.LENGTH_SHORT).show();
+                String gmtitle = WR_gametitle.getText().toString();
+                Log.d("데이터 읽기", "1");
+                String title = WR_title.getText().toString();
+                Log.d("데이터 읽기", "2");
+                String text = spref.getString("writer","");
+                Log.d("데이터 읽기", "3");
+                data.put("title",title);
+                Log.d("데이터 읽기", "4");
+                data.put("gametitle",gmtitle);
+                data.put("rating",f_rating);
+                data.put("writer",text);
+                ArrayList<String> attr = new ArrayList<>();
+                if(WR_attr1.getText().toString().equals("")){
+                    attr.add("emptycontent"); }
+                else{
+                    attr.add(WR_attr1.getText().toString()); }
+                if(WR_attr2.getText().toString().equals("")){
+                    attr.add("emptycontent"); }
+                else{
+                    attr.add(WR_attr2.getText().toString()); }
+                if(WR_attr3.getText().toString().equals("")){
+                    attr.add("emptycontent"); }
+                else{
+                    attr.add(WR_attr3.getText().toString()); }
+                if(WR_attr4.getText().toString().equals("")){
+                    attr.add("emptycontent"); }
+                else{
+                    attr.add(WR_attr4.getText().toString()); }
+                if(WR_attr5.getText().toString().equals("")){
+                    attr.add("emptycontent"); }
+                else{
+                    attr.add(WR_attr5.getText().toString()); }
+                if(WR_attr6.getText().toString().equals("")){
+                    attr.add("emptycontent"); }
+                else{
+                    attr.add(WR_attr6.getText().toString()); }
+                if(WR_attr7.getText().toString().equals("")){
+                    attr.add("emptycontent"); }
+                else{
+                    attr.add(WR_attr7.getText().toString()); }
+                if(WR_attr8.getText().toString().equals("")){
+                    attr.add("emptycontent"); }
+                else{
+                    attr.add(WR_attr8.getText().toString()); }
+                data.put("attribute",attr);
+                putData(spn,title,data);
                 break;
         }
     }
@@ -229,6 +279,7 @@ public class WritingFragement extends Fragment implements View.OnClickListener{
                 //TV_sample.setText(data.toString()); // 샘플코드
         }
     }
+
 
     // Firestore에서 가져온 모든 데이터 사용
     public void useData(ArrayList<Map<String, Object>> data, int what) {

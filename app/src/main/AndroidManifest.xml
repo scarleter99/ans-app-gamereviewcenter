@@ -30,8 +30,8 @@
         <activity android:name=".BoardPlatformMobileActivity"/>
         <activity android:name=".BoardPlatformNintendoActivity"/>
         <activity android:name=".BoardPlatformPSActivity"/>
-        <activity android:name=".BoardPlatformReviewActivity"/>
-        <activity android:name=".BoardPlatformXboxActivity">
+        <activity android:name=".BoardPlatformXboxActivity"/>
+        <activity android:name=".BoardPlatformReviewActivity">
         </activity>
     </application>
 
