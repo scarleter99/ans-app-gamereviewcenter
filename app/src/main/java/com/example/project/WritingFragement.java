@@ -14,7 +14,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
@@ -25,9 +24,6 @@ import androidx.fragment.app.Fragment;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -43,7 +39,6 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -67,14 +62,14 @@ public class WritingFragement extends Fragment implements View.OnClickListener{
 
         WR_title = (EditText) view.findViewById(R.id.et_writing_title);
         WR_gametitle = (EditText) view.findViewById(R.id.et_writing_gamename);
-        WR_attr1 = (EditText) view.findViewById(R.id.et_content1);
-        WR_attr2 = (EditText) view.findViewById(R.id.et_content2);
-        WR_attr3 = (EditText) view.findViewById(R.id.et_content3);
-        WR_attr4 = (EditText) view.findViewById(R.id.et_content4);
+        WR_attr1 = (EditText) view.findViewById(R.id.tv_content1);
+        WR_attr2 = (EditText) view.findViewById(R.id.tv_content2);
+        WR_attr3 = (EditText) view.findViewById(R.id.tv_content3);
+        WR_attr4 = (EditText) view.findViewById(R.id.tv_content4);
         WR_attr5 = (EditText) view.findViewById(R.id.et_content5);
-        WR_attr6 = (EditText) view.findViewById(R.id.et_content6);
-        WR_attr7 = (EditText) view.findViewById(R.id.et_content7);
-        WR_attr8 = (EditText) view.findViewById(R.id.et_content8);
+        WR_attr6 = (EditText) view.findViewById(R.id.tv_content6);
+        WR_attr7 = (EditText) view.findViewById(R.id.tv_content7);
+        WR_attr8 = (EditText) view.findViewById(R.id.tv_content8);
         rb = (RatingBar) view.findViewById(R.id.rb_rating);
 
         iv_putplaytime = view.findViewById(R.id.iv_putplaytime);
