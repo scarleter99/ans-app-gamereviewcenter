@@ -94,16 +94,57 @@ public class BoardPlatformPCActivity extends AppCompatActivity {
     // Firestore에서 가져온 모든 데이터 사용
     public void useData(ArrayList<Map<String, Object>> data) {
         Button btn;
-        Map<String, Object> target = data.get(0);
-        String buttonText = ""; // 버튼에 기록될 문자열
-        String[] splitID = target.toString().split("");
-        firstButton.setText(splitID[0]);//제목출력
-        for (int i = 1; i < data.size();i++){
+        Map<String, Object> target;
+        String buttonText =""; // 버튼에 기록될 문자열
+        String[] splitID;
+        firstButton.setText("게임이름 | 작성자 | 제목");//제목출력
+        for (int i = 0; i < data.size();i++){
+            buttonText ="";
             btn = new Button(this);
             target = data.get(i);
-            buttonText = ""; // 버튼에 기록될 문자열
-            splitID = target.toString().split("");
-            btn.setText(splitID[0]);//제목출력
+            splitID = target.toString().split(",");
+            for (int k = 0; k < splitID.length; k++){// 괄호제거
+                if (k == 0){
+                    splitID[k] = splitID[k].replace("{","");
+                } else if (k == splitID.length-1){
+                    splitID[k] = splitID[k].replace("}","");
+                }
+            }
+            for (int j = 0; j< splitID.length; j++){//제목출력
+                String str1 = splitID[j].trim();
+                String space = "  |  ";
+                if (str1.contains("rating")){
+
+                }else if (str1.contains("gametitle")){
+                    str1 = str1.replace("gametitle=", "");
+                    buttonText += str1;
+                    if (j != splitID.length-1){
+                        buttonText += space;
+                    }
+                }else if (str1.contains("writer")){
+                    str1 = str1.replace("writer=", "");
+                    buttonText += str1;
+                    if (j != splitID.length-1){
+                        buttonText += space;
+                    }
+                }
+                else if (str1.contains("attribute")){
+                    j += 7;
+                }else {
+                    str1 = str1.replace("title=","");
+                    buttonText += str1;
+                    if (j != splitID.length-1){
+                        buttonText += space;
+                    }
+                }
+            }
+            btn.setText(buttonText);//제목출력
+            btn.setOnClickListener(new View.OnClickListener(){//새로 생성된 버튼 클릭시
+                public void onClick(View v){
+                    Intent intent = new Intent(getApplicationContext(), BoardPlatformReviewActivity.class);
+                    startActivity(intent);
+                }
+            });
             layout_pc.addView(btn);
         }
     }
