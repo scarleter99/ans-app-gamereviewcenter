@@ -2,28 +2,28 @@
 - 이름: 김태범(20181602), 강동우(), 김진명(), 문민철()
 
 - MainActivity 구현 내용:
-	-a
+	- a
 	
 - SecondActivity 구현 내용:
-	-a
+	- a
 	
 - SignUpActivity 구현 내용:
-	-a
+	- a
 	
 - BoardFragment 구현 내용:
-	-a
+	- a
 	
 - BoardPlatformActivity 구현 내용:
-	-a
+	- a
 	
 - BoardPlatformReviewActivity 구현 내용:
-	-a
+	- a
 	
 - WritingFragment 구현 내용:
-	-a
+	- a
 	
 - MyPageFragment 구현 내용:
-	-a
+	- a
 
 - DB 구현 내용:
 	- Firebase의 Firestore 이용
