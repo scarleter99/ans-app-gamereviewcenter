@@ -70,6 +70,7 @@ public class BoardPlatformPCActivity extends AppCompatActivity {
                 } else {
                     Intent intent = new Intent(getApplicationContext(), BoardPlatformReviewActivity.class);
                     startActivity(intent);
+
                 }
             }
         });
@@ -103,6 +104,7 @@ public class BoardPlatformPCActivity extends AppCompatActivity {
             buttonText ="";
             btn = new Button(this);
             target = data.get(i);
+            Map<String,Object> tmp = data.get(i);
             splitID = target.toString().split(",");
             for (int k = 0; k < splitID.length; k++){// 괄호제거
                 if (k == 0){
@@ -142,7 +144,7 @@ public class BoardPlatformPCActivity extends AppCompatActivity {
             btn.setText(buttonText);//제목출력
             btn.setOnClickListener(new View.OnClickListener(){//새로 생성된 버튼 클릭시
                 public void onClick(View v){
-                    putDatas(target.toString());
+                    putDatas(tmp.toString());
                     Intent intent = new Intent(getApplicationContext(), BoardPlatformReviewActivity.class);
                     startActivity(intent);
                 }
@@ -152,6 +154,7 @@ public class BoardPlatformPCActivity extends AppCompatActivity {
     }
 
     protected void putDatas(String string) { //누른 버튼의 데이터를 저장
+
         SharedPreferences.Editor editor;
         SharedPreferences memberPref = getSharedPreferences("Info_Pref", 0);
         editor = memberPref.edit();

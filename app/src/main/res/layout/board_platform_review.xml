@@ -152,9 +152,9 @@
                     android:id="@+id/tv_playtime"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
                     android:layout_weight="1"
-                    android:text="플레이 타임 및 평가"
-                    android:textColor="@color/black" />
+                    android:text="플레이 타임 및 평가" />
 
                 <ImageView
                     android:id="@+id/iv_getplaytime"
