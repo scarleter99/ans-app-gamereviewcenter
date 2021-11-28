@@ -3,6 +3,7 @@ package com.example.project;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -36,7 +37,8 @@ public class BoardPlatformPCActivity extends AppCompatActivity {
     Button firstButton;
     ScrollView scrollView;
     LinearLayout layout_pc;
-
+    String[] splitID;
+    Map<String, Object> target;
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +48,8 @@ public class BoardPlatformPCActivity extends AppCompatActivity {
         scrollView = (ScrollView) findViewById(R.id.scrollView);
         firstButton = (Button) findViewById(R.id.btn_samplereview);
         layout_pc = (LinearLayout) findViewById(R.id.layout_pc);
-        getAllData("PC");
+        String pc = "PC";
+        getAllData(pc);
         //상단 바 제거
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
@@ -94,9 +97,7 @@ public class BoardPlatformPCActivity extends AppCompatActivity {
     // Firestore에서 가져온 모든 데이터 사용
     public void useData(ArrayList<Map<String, Object>> data) {
         Button btn;
-        Map<String, Object> target;
         String buttonText =""; // 버튼에 기록될 문자열
-        String[] splitID;
         firstButton.setText("게임이름 | 작성자 | 제목");//제목출력
         for (int i = 0; i < data.size();i++){
             buttonText ="";
@@ -141,6 +142,7 @@ public class BoardPlatformPCActivity extends AppCompatActivity {
             btn.setText(buttonText);//제목출력
             btn.setOnClickListener(new View.OnClickListener(){//새로 생성된 버튼 클릭시
                 public void onClick(View v){
+                    putDatas(target.toString());
                     Intent intent = new Intent(getApplicationContext(), BoardPlatformReviewActivity.class);
                     startActivity(intent);
                 }
@@ -148,4 +150,14 @@ public class BoardPlatformPCActivity extends AppCompatActivity {
             layout_pc.addView(btn);
         }
     }
+
+    protected void putDatas(String string) { //누른 버튼의 데이터를 저장
+        SharedPreferences.Editor editor;
+        SharedPreferences memberPref = getSharedPreferences("Info_Pref", 0);
+        editor = memberPref.edit();
+        editor.clear();
+        editor.putString("PC", string);
+        editor.apply();
+    }
+
 }
