@@ -45,8 +45,8 @@ public class MyPageFragment extends Fragment {
         View view = inflater.inflate(R.layout.mypage, container, false);
         MP_ID = (TextView) view.findViewById(R.id.mypage_IdShow);
         MP_NickName = (TextView) view.findViewById(R.id.mypage_IdShow2);
-        MP_PW = (EditText) view.findViewById(R.id.mypage_Idshow3);
-        MP_Email = (EditText) view.findViewById(R.id.mypage_Idshow4);
+        MP_Email = (EditText) view.findViewById(R.id.mypage_Idshow3);
+        MP_PW = (EditText) view.findViewById(R.id.mypage_Idshow4);
         db = FirebaseFirestore.getInstance();
         chkid = (TextView) view.findViewById(R.id.mp_chkid);
         spref = this.getActivity().getSharedPreferences("gref", Context.MODE_PRIVATE);
@@ -62,35 +62,42 @@ public class MyPageFragment extends Fragment {
         return view;
     }
 
-    private boolean passCheck(String pass) {
-        String pattern = "^.*(?=^.{8,15}$)(?=.*\\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$"; //비밀번호 (숫자, 문자, 특수문자 포함 8~15자리 이내)
-        if (!(Pattern.matches(pattern, pass))) {
-            return false;
-        }
-        else{
-            return  true;
-        }
-    }
-    private boolean emailCheck(String nickname){
-        String pattern = "[0-9|a-z|A-Z|ㄱ-ㅎ|ㅏ-ㅣ|가-힝]{2,8}";
-        if(Pattern.matches(pattern, nickname)){ // 숫자, 영어로만 이루어져있다면 true
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-
     public void ChangeClicked(View v) {
         ID = MP_ID.getText().toString();
         PWChange = MP_PW.getText().toString();
         EmailChange = MP_Email.getText().toString();
-        if(passCheck(PWChange) && emailCheck(EmailChange)){
-            updateData("user",ID,"email",PWChange);
-            updateData("user",ID,"pw",EmailChange);
+        if(!passCheck(MP_PW.getText().toString())) {
+            Toast.makeText(getContext(), "올바른 형식이 아닙니다."+"\n"+ "비밀번호 : 숫자, 문자, 특수문자 포함 8~15자리 이내구성", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), MP_PW.getText().toString(), Toast.LENGTH_SHORT).show();
+        }
+        else if(!emailCheck(MP_Email.getText().toString())) {
+            Toast.makeText(getContext(), "올바른 형식이 아닙니다."+"\n"+ "이메일 : 영어 ,@, 숫자로만 구성", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), MP_Email.getText().toString(), Toast.LENGTH_SHORT).show();
         }
         else{
-            Toast.makeText(getContext(), "올바른 형식이 아닙니다."+"\n"+ "비밀번호 : 숫자, 문자, 특수문자 포함 8~15자리 이내구성"+"\n"+ "이메일 : 영어 ,@, 숫자로만 구성", Toast.LENGTH_SHORT).show();
+            updateData("user",ID,"pw",PWChange);
+            updateData("user",ID,"email",EmailChange);
+            Toast.makeText(getContext(), "회원정보가 변경되었습니다!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+    }
+
+    private boolean passCheck(String pass) {
+        String pattern = "^.*(?=^.{8,15}$)(?=.*\\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$"; //비밀번호 (숫자, 문자, 특수문자 포함 8~15자리 이내)
+        if ((Pattern.matches(pattern, pass))) {
+            return true;
+        }
+        else{
+            return  false;
+        }
+    }
+    private boolean emailCheck(String email){
+        String pattern = "^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$";
+        if(Pattern.matches(pattern, email)) {
+            return true;
+        }
+        else {
+            return false;
         }
     }
 
@@ -206,14 +213,14 @@ public class MyPageFragment extends Fragment {
             case 4:
                 String[] splitEmail = data.toString().split(",");
                 String[] splitEmail2 = splitEmail[0].split("=");
-                MP_Email.setText(splitEmail2[1]);
+                MP_PW.setText(splitEmail2[1]);
                 break;
             //Email
             case 5:
                 String[] splitPW = data.toString().split(",");
                 String[] splitPW2 = splitPW[3].split("=");
                 String splitPW3 = splitPW2[1].replace("}","");
-                MP_PW.setText(splitPW3);
+                MP_Email.setText(splitPW3);
                 break;
         }
     }

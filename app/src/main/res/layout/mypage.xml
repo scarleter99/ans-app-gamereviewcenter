@@ -67,7 +67,7 @@
                 android:textAlignment="center"
                 android:textColor="#60CBF6"
                 android:textSize="24dp"
-                android:textStyle="normal" />
+                android:textStyle="bold|italic" />
 
         </TableRow>
 
@@ -98,7 +98,7 @@
                 android:textAlignment="center"
                 android:textColor="#60CBF6"
                 android:textSize="24dp"
-                android:textStyle="normal" />
+                android:textStyle="bold|italic" />
 
         </TableRow>
 
@@ -125,14 +125,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="7"
-                android:backgroundTint="#356577"
                 android:ems="10"
-                android:gravity="center"
-                android:inputType="textEmailAddress"
-                android:textColor="#60CBF6"
-                android:textColorHighlight="#356577"
-                android:textColorHint="#356577"
-                android:textColorLink="#356577" />
+                android:inputType="textEmailAddress"/>
 
         </TableRow>
 
@@ -159,14 +153,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="7"
-                android:backgroundTint="#356577"
                 android:ems="10"
-                android:gravity="center"
                 android:inputType="textPassword"
-                android:textColor="#60CBF6"
-                android:textColorHighlight="#356577"
-                android:textColorHint="#356577"
-                android:textColorLink="#356577" />
+                />
 
         </TableRow>
     </TableLayout>
@@ -179,7 +168,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="221dp"
         android:background="@drawable/btn_circle"
-        android:text="수정"
+        android:text="확인"
         android:textColor="#FFFFFF"
         android:textSize="24dp" />
 
