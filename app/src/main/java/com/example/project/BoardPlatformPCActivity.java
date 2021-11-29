@@ -145,6 +145,13 @@ public class BoardPlatformPCActivity extends AppCompatActivity {
                 }
             }
             btn.setText(buttonText);//제목출력
+            // 버튼에 배경 색 추가
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            params.bottomMargin = 2;
+            btn.setLayoutParams(params);
+            btn.setBackgroundColor(0xFF60CBF6);
+            btn.setTextColor(0xFFFFFFFF);
+
             btn.setOnClickListener(new View.OnClickListener(){//새로 생성된 버튼 클릭시
                 public void onClick(View v){
                     putDatas(tmp.toString());
