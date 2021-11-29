@@ -83,8 +83,8 @@ public class BoardPlatformReviewActivity extends AppCompatActivity {
         btn_reply.setOnClickListener(new View.OnClickListener(){ // 추천 버튼을 눌렀을 때
             public void onClick(View v){
                 if (pushtry < 1) {
-                    updateData(platform, title, "recommend", recommendpush+1);
-                    updateData(platform, title, "recommendtry", pushtry+1);
+                    updateData(platform, title, "recommend", recommendpush+1);//추천수 증가된 데이터 전달
+                    updateData(platform, title, "recommendtry", pushtry+1);//추천수 중복 방지 데이터 전달
                     getData(platform, title);
                 }
                 else {
@@ -165,12 +165,12 @@ public class BoardPlatformReviewActivity extends AppCompatActivity {
         }
         for (int j = 0; j < splitdata.length; j++) {//제목출력
             String str1 = splitdata[j].trim();
-            if (str1.contains("recommend=")) {
+            if (str1.contains("recommend=")) {//추천수 표시
                 str1 = str1.replace("recommend=","");
                 tv_rating.setText("추천수 : "+str1);
                 recommendpush = Integer.parseInt(str1);
             }
-            if (str1.contains("recommendtry=")){
+            if (str1.contains("recommendtry=")){//추천수 중복 방지
                 str1 = str1.replace("recommendtry=","");
                 pushtry = Integer.parseInt(str1);
             }

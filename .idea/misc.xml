@@ -3,6 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/Client/app/src/main/res/layout/board_platform_etc.xml" value="0.38645833333333335" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/Client/app/src/main/res/layout/board_platform_mobile.xml" value="0.38645833333333335" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/Client/app/src/main/res/layout/board_platform_nintendo.xml" value="0.38645833333333335" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/Client/app/src/main/res/layout/board_platform_pc.xml" value="0.38645833333333335" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/Client/app/src/main/res/layout/board_platform_ps4ps5.xml" value="0.38645833333333335" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/Client/app/src/main/res/layout/board_platform_xbox.xml" value="0.38645833333333335" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/MobileProject/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.40260416666666665" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/MobileProject/app/src/main/res/drawable/ic_launcher_background.xml" value="0.40260416666666665" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/MobileProject/app/src/main/res/layout/activity_main.xml" value="0.38645833333333335" />
