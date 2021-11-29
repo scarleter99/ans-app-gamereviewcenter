@@ -36,14 +36,14 @@
 - BoardPlatformActivity(BoardPlatformPC/Mobile/Nintendo/PS/Xbox/EtcActivity) 구현 내용:
 	- firstButton: 아래의 글이 게임이름, 작성자, 제목 순으로 작성돼있다는 것을 알려주기 위해 생성한 버튼(눌러도 특별한 이벤트가 발생되지 않습니다.)
 	- btn_search: 검색버튼, setOnClickListener를 통해 누르면 et_search에 작성된 내용을 바탕으로 검색
-	- getAllData()를 통해 각 플랫폼에 작성된 모든 글을 불러와 useData()를 통해 글의 갯수만큼 그 글에 해당하는 리뷰 페이지로 연결되는 동적 버튼 생성
+	- 후술할 getAllData()를 통해 각 플랫폼에 작성된 모든 글을 불러와 useData()를 통해 글의 갯수만큼 그 글에 해당하는 리뷰 페이지로 연결되는 동적 버튼 생성
 	- useData(): case 1: 각 플랫폼 페이지 접속 시 사용 case2: 검색기능 사용시 사용
 	- putDatas(): useData() case 1,2의 btn에 쓰여진 text를 저장하여 이 정보를 활용하여 리뷰 페이지에 이에 해당되는 글을 작성하기 위한 메소드
 
 - BoardPlatformReviewActivity 구현 내용:
 	- setPage(): 눌려진 버튼에 해당하는 데이터를 출력하기 위한 메소드
-	- getData(): tv_pl_re_platform에 쓰여진 플랫폼을 통해 데이터베이스의 collection에 접근, tv_platform_review_title을 통해 데이터베이스의 document에 접근
-	- getImage(): Storage에서 해당 이미지를 읽어서 ImageView에 입력 - Glide 리이브러리 사용
+	- 후술할 getData() 메서드를 tv_pl_re_platform에 쓰여진 플랫폼을 통해 데이터베이스의 collection에 접근, tv_platform_review_title을 통해 데이터베이스의 document에 접근
+	- 후술할 getImage() 메서드를 활용하여 글과 함께 업로드 된 이미지를 출력
 	
 - WritingFragment 구현 내용:
 	- 프래퍼런스에 저장한 아이디를 바탕으로 사용자의 닉네임을 불러와서 글쓴이로 설정
