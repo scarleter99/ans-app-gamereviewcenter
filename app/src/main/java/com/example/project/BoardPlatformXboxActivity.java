@@ -73,7 +73,6 @@ public class BoardPlatformXboxActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
 
     // Firestore에서 데이터 모두가져오기
