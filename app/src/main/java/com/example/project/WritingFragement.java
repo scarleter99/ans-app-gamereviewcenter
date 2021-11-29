@@ -304,7 +304,6 @@ public class WritingFragement extends Fragment implements View.OnClickListener{
             istitlecheck = false;
         }
         else{
-            Toast.makeText(getContext(), "사용 가능한 제목입니다.", Toast.LENGTH_SHORT).show();
             istitlecheck = true;
         }
         Map<String, Object> data = new HashMap<>();
@@ -374,6 +373,9 @@ public class WritingFragement extends Fragment implements View.OnClickListener{
         Boolean finchk = istitlecheck;
         if(isfill&&finchk){
             putData(spn,title,data);
+            Toast.makeText(getContext(), "작성 완료되었습니다.", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(getActivity(), SecondActivity.class);
+            startActivity(intent);
         }
         else if(!isfill){
             Toast.makeText(getContext(),"내용을 한칸이라도 입력해주세요!",Toast.LENGTH_SHORT).show();
