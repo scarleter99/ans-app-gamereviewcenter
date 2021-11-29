@@ -45,6 +45,7 @@ public class BoardPlatformPCActivity extends AppCompatActivity {
     EditText et_search;
     Button btn_search;
     String search, keyword;
+    ArrayList <Button> theButton = new ArrayList<Button>();
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -177,10 +178,15 @@ public class BoardPlatformPCActivity extends AppCompatActivity {
                         }
                     });
                     layout_pc.addView(btn);
+                    theButton.add(btn);
                 }
                 break;
 
             case 2://검색화면
+                for (int i = 0; i< theButton.size();i++){
+                    Button button = theButton.get(i);
+                    layout_pc.removeView(button);
+                }
                 buttonText = ""; // 버튼에 기록될 문자열
                 int check = 0; // 게임이름/작성자/제목에 해당 문자열이 있는지 체크
                 firstButton.setText("게임이름 | 작성자 | 제목");//제목출력
@@ -253,6 +259,7 @@ public class BoardPlatformPCActivity extends AppCompatActivity {
                         });
                         if (check == 1){
                             layout_pc.addView(btn);
+                            theButton.add(btn);
                         }
                     }
                     else{
