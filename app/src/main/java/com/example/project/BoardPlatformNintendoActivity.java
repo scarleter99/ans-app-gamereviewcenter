@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Spinner;
@@ -32,6 +33,8 @@ public class BoardPlatformNintendoActivity extends AppCompatActivity {
     LinearLayout layout_nintendo;
     String[] splitID;
     Map<String, Object> target;
+    EditText et_search;
+    Button btn_search;
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +44,8 @@ public class BoardPlatformNintendoActivity extends AppCompatActivity {
         scrollView = (ScrollView) findViewById(R.id.scrollView);
         firstButton = (Button) findViewById(R.id.btn_samplereview_nintendo);
         layout_nintendo = (LinearLayout) findViewById(R.id.layout_nintendo);
+        et_search = (EditText) findViewById(R.id.et_search);
+        btn_search = (Button) findViewById(R.id.btn_search);
         getAllData("nintendo");
         //상단 바 제거
         ActionBar actionBar = getSupportActionBar();

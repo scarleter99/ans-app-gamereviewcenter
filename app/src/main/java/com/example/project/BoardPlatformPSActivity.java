@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Spinner;
@@ -32,6 +33,8 @@ public class BoardPlatformPSActivity extends AppCompatActivity {
     LinearLayout layout_ps;
     String[] splitID;
     Map<String, Object> target;
+    EditText et_search;
+    Button btn_search;
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +44,8 @@ public class BoardPlatformPSActivity extends AppCompatActivity {
         scrollView = (ScrollView) findViewById(R.id.scrollView);
         firstButton = (Button) findViewById(R.id.btn_samplereview_ps4ps5);
         layout_ps = (LinearLayout) findViewById(R.id.layout_ps);
+        et_search = (EditText) findViewById(R.id.et_search);
+        btn_search = (Button) findViewById(R.id.btn_search);
         getAllData("playstation");
         //상단 바 제거
         ActionBar actionBar = getSupportActionBar();
