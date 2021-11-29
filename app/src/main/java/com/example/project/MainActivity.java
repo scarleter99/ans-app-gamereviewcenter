@@ -83,7 +83,6 @@ public class MainActivity extends AppCompatActivity {
                                     if(document.get("pw").equals(et_inputpass.getText().toString())){
                                         islogin = true;
                                         Toast.makeText(getApplicationContext(),"로그인 성공", Toast.LENGTH_SHORT).show();
-                                        Toast.makeText(getApplicationContext(),document.get("nickname").toString(), Toast.LENGTH_SHORT).show();
                                         editor.putString("editText_id", et_inputid.getText().toString());
                                         editor.putString("writer", document.get("nickname").toString());
                                         editor.commit();

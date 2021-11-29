@@ -55,8 +55,8 @@ public class WritingFragement extends Fragment implements View.OnClickListener{
     ImageView iv_putplaytime;
     Button btn_Done;
     EditText WR_title,WR_gametitle,WR_attr1,WR_attr2,WR_attr3,WR_attr4,WR_attr5,WR_attr6,WR_attr7,WR_attr8;
-    String writer;
     SharedPreferences spref;
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.writing, container, false);
@@ -95,7 +95,6 @@ public class WritingFragement extends Fragment implements View.OnClickListener{
                 imgLauncher.launch(intent);
                 break;
             case R.id.btn_done:
-                putImage("review1");
                 Map<String, Object> data = new HashMap<>();
                 String spn = spn_writing.getSelectedItem().toString();
                 Boolean isfill = false;
@@ -107,6 +106,7 @@ public class WritingFragement extends Fragment implements View.OnClickListener{
                 data.put("gametitle",gmtitle);
                 data.put("rating",rating);
                 data.put("writer",text);
+                putImage(title);
                 ArrayList<String> attr = new ArrayList<>();
                 if(WR_attr1.getText().toString().equals("")){
                     attr.add("emptycontent"); }
