@@ -62,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
         switch (v.getId()){
             case R.id.btn_login:
                 getAllData("user");
-                //login("user");
                 break;
             case R.id.tv_signup:
                 Intent intent2 = new Intent(getApplicationContext(), SignUpActivity.class);
