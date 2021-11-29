@@ -1,5 +1,6 @@
 package com.example.project;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -124,5 +126,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), SignUpActivity.class);
         startActivity(intent);
     }
+
+    // 뒤로가기 버튼 클릭시
+
 
 }
