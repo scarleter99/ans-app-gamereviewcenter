@@ -62,6 +62,7 @@ public class MyPageFragment extends Fragment {
         return view;
     }
 
+    //변경버튼 클릭
     public void ChangeClicked(View v) {
         ID = MP_ID.getText().toString();
         PWChange = MP_PW.getText().toString();
@@ -82,6 +83,7 @@ public class MyPageFragment extends Fragment {
         }
     }
 
+    //비밀번호 형식 체크
     private boolean passCheck(String pass) {
         String pattern = "^.*(?=^.{8,15}$)(?=.*\\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$"; //비밀번호 (숫자, 문자, 특수문자 포함 8~15자리 이내)
         if ((Pattern.matches(pattern, pass))) {
@@ -91,6 +93,8 @@ public class MyPageFragment extends Fragment {
             return  false;
         }
     }
+
+    //이메일 형식 체크
     private boolean emailCheck(String email){
         String pattern = "^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$";
         if(Pattern.matches(pattern, email)) {
@@ -101,6 +105,8 @@ public class MyPageFragment extends Fragment {
         }
     }
 
+
+    //초기화면 설정
     public void SetMyPage(View v){
         String text = spref.getString("editText_id","");
         getData("user", text, 2);

@@ -125,6 +125,7 @@ public class WritingFragement extends Fragment implements View.OnClickListener{
                 });
     }
 
+    //게시판의 글 제목을 전부 가져옴
     public void getTitleData(String collec, String title) {
         ArrayList<String> arr = new ArrayList<>();
         db.collection(collec)
@@ -161,12 +162,14 @@ public class WritingFragement extends Fragment implements View.OnClickListener{
         }
     }
 
+    //플랫폼을 결정하는 스피너 설정
     private void platform_initspinner(){
         String[] array = {"PC","mobile","Nintendo", "PS4/PS5", "XBOX", "ETC"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_dropdown_item_1line, array);
         spn_writing.setAdapter(adapter);
     }
 
+    //이미지 삽입
     public void putImage(String reviewNum) {
         try {
             st = FirebaseStorage.getInstance();
@@ -205,6 +208,8 @@ public class WritingFragement extends Fragment implements View.OnClickListener{
                     }
                 }
             });
+
+    //데이터 최초생성
     public void putData(String collec, String doc, Object data) {
         DocumentReference docRef = db.collection(collec).document(doc);
         docRef
@@ -292,9 +297,7 @@ public class WritingFragement extends Fragment implements View.OnClickListener{
         }
     }
 
-    public void useData() {
-
-    }
+    public void useData() {    }
 
     // 데이터 사용
     public void useData(ArrayList<String> arr, String temp) {
@@ -315,8 +318,6 @@ public class WritingFragement extends Fragment implements View.OnClickListener{
         String writer = spref.getString("writer","");
         data.put("writer",writer);
         data.put("rating",rating);
-        data.put("recommend",0);
-        data.put("recommendtry", 0);
         putImage(title);
         ArrayList<String> attr = new ArrayList<>();
         if(WR_attr1.getText().toString().equals("")){
