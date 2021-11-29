@@ -61,7 +61,8 @@ public class MainActivity extends AppCompatActivity {
     public void buttonClicked(View v){
         switch (v.getId()){
             case R.id.btn_login:
-                login("user");
+                getAllData("user");
+                //login("user");
                 break;
             case R.id.tv_signup:
                 Intent intent2 = new Intent(getApplicationContext(), SignUpActivity.class);
@@ -70,9 +71,9 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
-
-    // 로그인함수
-    private void login(String collec){
+    // 데이터 모두 불러오기
+    public void getAllData(String collec) {
+        ArrayList<Map<String, Object>> arr = new ArrayList<>();
         db.collection(collec)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -80,36 +81,43 @@ public class MainActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                if(document.getId().equals(et_inputid.getText().toString())){
-                                    if(document.get("pw").equals(et_inputpass.getText().toString())){
-                                        islogin = true;
-                                        Toast.makeText(getApplicationContext(),"로그인 성공", Toast.LENGTH_SHORT).show();
-                                        editor.putString("editText_id", et_inputid.getText().toString());
-                                        editor.putString("writer", document.get("nickname").toString());
-                                        editor.commit();
-                                        Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
-                                        startActivity(intent);
-                                        return;
-                                    }
-                                    else{
-                                        islogin = false;
-                                        Toast.makeText(getApplicationContext(),"비밀번호가 잘못되었습니다.", Toast.LENGTH_SHORT).show();
-                                        return;
-                                    }
-                                }
-                                else{
-                                    islogin = false;
-                                    continue;
-                                }
+                                Log.d("데이터 모두 읽기", document.getId() + " => " + document.getData());
+                                arr.add(document.getData());
                             }
-                            if(!islogin){
-                                Toast.makeText(getApplicationContext(),"아이디가 없습니다.", Toast.LENGTH_SHORT).show();
-                            }
+                            useData(arr, et_inputid.getText().toString(), et_inputpass.getText().toString());
                         } else {
                             Log.d("데이터 모두 읽기", "Error getting documents: ", task.getException());
                         }
                     }
                 });
+    }
+
+
+    // Firestore에서 가져온 모든 데이터 사용
+    public void useData(ArrayList<Map<String, Object>> data, String id, String pw) {
+        for(int i = 0; i < data.size() ; i++){
+            if(data.get(i).get("id").equals(id)){
+                if(data.get(i).get("pw").equals(pw)){
+                    islogin = true;
+                    Toast.makeText(getApplicationContext(),"로그인 성공", Toast.LENGTH_SHORT).show();
+                    editor.putString("editText_id", et_inputid.getText().toString());
+                    editor.putString("writer", data.get(i).get("nickname").toString());
+                    editor.commit();
+                    Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
+                    startActivity(intent);
+                    return;
+                }
+                else{
+                    islogin = false;
+                    Toast.makeText(getApplicationContext(),"비밀번호가 잘못되었습니다.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+            }
+            else{
+                islogin = false;
+                continue;
+            }
+        }
     }
 
     // 회원가입 텍스트뷰 클릭
