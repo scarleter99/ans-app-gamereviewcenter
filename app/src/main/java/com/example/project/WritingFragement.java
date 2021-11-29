@@ -315,7 +315,7 @@ public class WritingFragement extends Fragment implements View.OnClickListener{
         String writer = spref.getString("writer","");
         data.put("writer",writer);
         data.put("rating",rating);
-        data.put("recommend","0");
+        data.put("recommend",0);
         putImage(title);
         ArrayList<String> attr = new ArrayList<>();
         if(WR_attr1.getText().toString().equals("")){

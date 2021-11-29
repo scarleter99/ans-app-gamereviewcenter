@@ -132,10 +132,11 @@ public class BoardPlatformPCActivity extends AppCompatActivity {
                     if (j != splitID.length-1){
                         buttonText += space;
                     }
-                }
-                else if (str1.contains("attribute")){
+                } else if (str1.contains("attribute")){
                     j += 7;
-                }else {
+                } else if (str1.contains("recommend")){
+
+                } else {
                     str1 = str1.replace("title=","");
                     buttonText += str1;
                     if (j != splitID.length-1){
