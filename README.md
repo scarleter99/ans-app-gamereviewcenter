@@ -1,5 +1,5 @@
 # 팀프로젝트 8조 - Readme 파일
-- 이름: 김태범(20181602), 강동우(), 김진명(20181599), 문민철(20181607)
+- 이름: 김태범(20181602), 강동우(20181566), 김진명(20181599), 문민철(20181607)
 
 - MainActivity 구현 내용:
 	- login(): 아이디와 비밀번호를 입력받고, FireStoreDB에 "user" doucument에서 아이디가 존재하는지 확인, 없으면 알림 메시지 출력
@@ -30,13 +30,20 @@
 	- 회원가입 성공시 firebaseDB중 user에 각각의 입력 정보를 저장
 	
 - BoardFragment 구현 내용:
-	- a
+	- 로그인 성공 시 첫 출력 화면
+	- 6개의 각각의 버튼(PC/Mobile/Nintendo/PS/Xbox/Etc)을 통해 클릭 시 BoardPlatformActivity 6페이지 중 한 페이지로 이동
 	
-- BoardPlatformActivity 구현 내용:
-	- a
-	
+- BoardPlatformActivity(BoardPlatformPC/Mobile/Nintendo/PS/Xbox/EtcActivity) 구현 내용:
+	- firstButton: 아래의 글이 게임이름, 작성자, 제목 순으로 작성돼있다는 것을 알려주기 위해 생성한 버튼(눌러도 특별한 이벤트가 발생되지 않습니다.)
+	- btn_search: 검색버튼, setOnClickListener를 통해 누르면 et_search에 작성된 내용을 바탕으로 검색
+	- getAllData()를 통해 각 플랫폼에 작성된 모든 글을 불러와 useData()를 통해 글의 갯수만큼 그 글에 해당하는 리뷰 페이지로 연결되는 동적 버튼 생성
+	- useData(): case 1: 각 플랫폼 페이지 접속 시 사용 case2: 검색기능 사용시 사용
+	- putDatas(): useData() case 1,2의 btn에 쓰여진 text를 저장하여 이 정보를 활용하여 리뷰 페이지에 이에 해당되는 글을 작성하기 위한 메소드
+
 - BoardPlatformReviewActivity 구현 내용:
-	- a
+	- setPage(): 눌려진 버튼에 해당하는 데이터를 출력하기 위한 메소드
+	- getData(): tv_pl_re_platform에 쓰여진 플랫폼을 통해 데이터베이스의 collection에 접근, tv_platform_review_title을 통해 데이터베이스의 document에 접근
+	- getImage(): Storage에서 해당 이미지를 읽어서 ImageView에 입력 - Glide 리이브러리 사용
 	
 - WritingFragment 구현 내용:
 	- 프래퍼런스에 저장한 아이디를 바탕으로 사용자의 닉네임을 불러와서 글쓴이로 설정
