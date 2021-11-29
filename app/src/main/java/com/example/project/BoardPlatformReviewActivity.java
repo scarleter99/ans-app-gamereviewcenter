@@ -44,7 +44,6 @@ public class BoardPlatformReviewActivity extends AppCompatActivity {
     ArrayList <String> keydata = new ArrayList<String>(); // 플랫폼이 무엇인지 구별하기 위한 리스트;
     String prefData;
     String [] splitID;
-    Button btn_reply;
     int recommendpush; //추천수
     int pushtry;// 추천횟수
 
@@ -67,32 +66,17 @@ public class BoardPlatformReviewActivity extends AppCompatActivity {
         tv_content7 = findViewById(R.id.tv_content7);
         tv_content8 = findViewById(R.id.tv_content8);
         rb_rating = findViewById(R.id.rb_rating);
-        btn_reply = findViewById(R.id.btn_reply);
         db = FirebaseFirestore.getInstance();
-        pushtry = 0; //추천버튼 누른 횟수
 
         setPage();
         String platform = tv_pl_re_platform.getText().toString().trim();//플랫폼
         String title = tv_platform_review_title.getText().toString().trim();//제목
-        getData(platform, title);
 
 
         // 상단 타이틀바 제거
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
-        btn_reply.setOnClickListener(new View.OnClickListener(){ // 추천 버튼을 눌렀을 때
-            public void onClick(View v){
-                pushtry += 1;
-                if (pushtry < 1) {
-                    updateData(platform, title, "recommend", recommendpush+1);//추천수 증가된 데이터 전달
-                    getData(platform, title);
-                }
-                else {
-                    Toast.makeText(getApplicationContext(), "이미 추천한 글입니다.", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
 
     }
     public void getImage(String review) {
@@ -135,44 +119,6 @@ public class BoardPlatformReviewActivity extends AppCompatActivity {
                 });
     }
 
-    public void getData(String collec, String doc) {
-        DocumentReference docRef = db.collection(collec).document(doc);
-        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                if (task.isSuccessful()) {
-                    DocumentSnapshot document = task.getResult();
-                    if (document.exists()) {
-                        Log.d("데이터 가져오기", "DocumentSnapshot data: " + document.getData());
-                        useData(document.getData());
-                    } else {
-                        Log.d("데이터 가져오기", "No such document");
-                    }
-                } else {
-                    Log.d("데이터 가져오기", "get failed with ", task.getException());
-                }
-            }
-        });
-    }
-
-    public void useData(Map<String, Object> data) {
-        String[] splitdata = data.toString().split(",");
-        for (int k = 0; k < splitdata.length; k++) {// 괄호제거
-            if (k == 0) {
-                splitdata[k] = splitdata[k].replace("{", "");
-            } else if (k == splitdata.length - 1) {
-                splitdata[k] = splitdata[k].replace("}", "");
-            }
-        }
-        for (int j = 0; j < splitdata.length; j++) {//제목출력
-            String str1 = splitdata[j].trim();
-            if (str1.contains("recommend=")) {//추천수 표시
-                str1 = str1.replace("recommend=","");
-                tv_rating.setText("추천수 : "+str1);
-                recommendpush = Integer.parseInt(str1);
-            }
-        }
-    }
 
     public void setPage(){
         keydata.add("PC");

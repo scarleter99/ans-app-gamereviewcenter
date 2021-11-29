@@ -142,8 +142,6 @@ public class BoardPlatformXboxActivity extends AppCompatActivity {
                             }
                         } else if (str1.contains("attribute")) {
                             j += 7;
-                        } else if (str1.contains("recommend")) {
-
                         } else {
                             str1 = str1.replace("title=", "");
                             buttonText += str1;
@@ -176,6 +174,9 @@ public class BoardPlatformXboxActivity extends AppCompatActivity {
                 for (int i = 0; i< theButton.size();i++){
                     Button button = theButton.get(i);
                     layout_xbox.removeView(button);
+                }
+                for (int i = 0; i< theButton.size();i++){
+                    theButton.remove(0);
                 }
                 buttonText = ""; // 버튼에 기록될 문자열
                 int check = 0; // 게임이름/작성자/제목에 해당 문자열이 있는지 체크
@@ -220,8 +221,6 @@ public class BoardPlatformXboxActivity extends AppCompatActivity {
                                 }
                             } else if (str1.contains("attribute")) {
                                 j += 7;
-                            } else if (str1.contains("recommend")) {
-
                             } else {
                                 str1 = str1.replace("title=", "");
                                 if (search.equals("제목")&&str1.contains(keyword)){
