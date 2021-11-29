@@ -1,6 +1,7 @@
 package com.example.project;
 
-import android.content.Intent;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,31 +14,30 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBar;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
-import java.net.IDN;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Pattern;
 
 public class MyPageFragment extends Fragment {
 
     FirebaseFirestore db;
-    TextView MP_ID,MP_NickName;
+    TextView MP_ID,MP_NickName,chkid;
     EditText MP_PW,MP_Email;
-    String ID,PWChange,EmailChange;
+    String ID,PWChange,EmailChange,idchk;
+    SharedPreferences spref;
+
 
     @Nullable
     @Override
@@ -48,6 +48,8 @@ public class MyPageFragment extends Fragment {
         MP_PW = (EditText) view.findViewById(R.id.mypage_Idshow3);
         MP_Email = (EditText) view.findViewById(R.id.mypage_Idshow4);
         db = FirebaseFirestore.getInstance();
+        chkid = (TextView) view.findViewById(R.id.mp_chkid);
+        spref = this.getActivity().getSharedPreferences("gref", Context.MODE_PRIVATE);
         SetMyPage(view);
         Button Change;
         Change = (Button) view.findViewById(R.id.mypage_change);
@@ -59,22 +61,45 @@ public class MyPageFragment extends Fragment {
         });
         return view;
     }
-    // 샘플 코드
 
+    private boolean passCheck(String pass) {
+        String pattern = "^.*(?=^.{8,15}$)(?=.*\\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$"; //비밀번호 (숫자, 문자, 특수문자 포함 8~15자리 이내)
+        if (!(Pattern.matches(pattern, pass))) {
+            return false;
+        }
+        else{
+            return  true;
+        }
+    }
+    private boolean emailCheck(String nickname){
+        String pattern = "[0-9|a-z|A-Z|ㄱ-ㅎ|ㅏ-ㅣ|가-힝]{2,8}";
+        if(Pattern.matches(pattern, nickname)){ // 숫자, 영어로만 이루어져있다면 true
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 
     public void ChangeClicked(View v) {
         ID = MP_ID.getText().toString();
         PWChange = MP_PW.getText().toString();
         EmailChange = MP_Email.getText().toString();
-        updateData("user",ID,"email",PWChange);
-        updateData("user",ID,"pw",EmailChange);
+        if(passCheck(PWChange) && emailCheck(EmailChange)){
+            updateData("user",ID,"email",PWChange);
+            updateData("user",ID,"pw",EmailChange);
+        }
+        else{
+            Toast.makeText(getContext(), "올바른 형식이 아닙니다."+"\n"+ "비밀번호 : 숫자, 문자, 특수문자 포함 8~15자리 이내구성"+"\n"+ "이메일 : 영어 ,@, 숫자로만 구성", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void SetMyPage(View v){
-        getData("user", "asdf" , 1);
-        getData("user", "asdf", 2);
-        getData("user", "asdf", 3);
-        getData("user", "asdf", 4);
+        String text = spref.getString("editText_id","");
+        getData("user", text, 2);
+        getData("user", text, 3);
+        getData("user", text, 4);
+        getData("user", text, 5);
     }
 
     // Firestore에 데이터 추가
@@ -166,29 +191,29 @@ public class MyPageFragment extends Fragment {
     public void useData(Map<String, Object> data, int what) {
         switch (what) {
             //PW
-            case 1:
+            case 2:
                 String[] splitID = data.toString().split(",");
                 String[] splitID2 = splitID[2].split("=");
-                MP_ID.setText(splitID2[1]); // 샘플코드
+                MP_ID.setText(splitID2[1]);
                 break;
             //NickName
-            case 2:
+            case 3:
                 String[] splitNickName = data.toString().split(",");
                 String[] splitNickName2 = splitNickName[1].split("=");
-                MP_NickName.setText(splitNickName2[1]); // 샘플코드
+                MP_NickName.setText(splitNickName2[1]);
                 break;
             //Name
-            case 3:
+            case 4:
                 String[] splitEmail = data.toString().split(",");
                 String[] splitEmail2 = splitEmail[0].split("=");
-                MP_Email.setText(splitEmail2[1]); // 샘플코드
+                MP_Email.setText(splitEmail2[1]);
                 break;
             //Email
-            case 4:
+            case 5:
                 String[] splitPW = data.toString().split(",");
                 String[] splitPW2 = splitPW[3].split("=");
                 String splitPW3 = splitPW2[1].replace("}","");
-                MP_PW.setText(splitPW3); // 샘플코드
+                MP_PW.setText(splitPW3);
                 break;
         }
     }
@@ -197,7 +222,7 @@ public class MyPageFragment extends Fragment {
     public void useData(ArrayList<Map<String, Object>> data, int what) {
         switch (what) {
             case 1:
-                //MP_ID.setText(data.toString()); // 샘플코드
+                //미사용
         }
     }
 }
