@@ -69,7 +69,6 @@ public class BoardPlatformReviewActivity extends AppCompatActivity {
         rb_rating = findViewById(R.id.rb_rating);
         btn_reply = findViewById(R.id.btn_reply);
         db = FirebaseFirestore.getInstance();
-        pushtry = 0;
 
         setPage();
         String platform = tv_pl_re_platform.getText().toString().trim();//플랫폼
