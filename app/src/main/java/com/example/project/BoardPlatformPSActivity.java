@@ -176,9 +176,7 @@ public class BoardPlatformPSActivity extends AppCompatActivity {
                     Button button = theButton.get(i);
                     layout_ps.removeView(button);
                 }
-                for (int i = 0; i< theButton.size();i++){
-                    theButton.remove(0);
-                }
+
                 buttonText = ""; // 버튼에 기록될 문자열
                 int check = 0; // 게임이름/작성자/제목에 해당 문자열이 있는지 체크
                 firstButton.setText("게임이름 | 작성자 | 제목");//제목출력

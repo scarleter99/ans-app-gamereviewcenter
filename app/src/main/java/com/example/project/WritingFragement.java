@@ -164,7 +164,7 @@ public class WritingFragement extends Fragment implements View.OnClickListener{
 
     //플랫폼을 결정하는 스피너 설정
     private void platform_initspinner(){
-        String[] array = {"PC","mobile","Nintendo", "PS4/PS5", "XBOX", "ETC"};
+        String[] array = {"PC","mobile","nintendo", "playstation", "xbox", "etc"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_dropdown_item_1line, array);
         spn_writing.setAdapter(adapter);
     }
