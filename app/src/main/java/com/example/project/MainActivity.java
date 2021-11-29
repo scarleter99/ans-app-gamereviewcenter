@@ -119,6 +119,9 @@ public class MainActivity extends AppCompatActivity {
                 continue;
             }
         }
+        if(!islogin){
+            Toast.makeText(getApplicationContext(),"없는 아이디 입니다.", Toast.LENGTH_SHORT).show();
+        }
     }
 
     // 회원가입 텍스트뷰 클릭

@@ -47,7 +47,6 @@ public class SecondActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-
                 switch (item.getItemId()) {
                     case R.id.item_board:
                         ft.replace(R.id.layout_activity_main_second, fragment_board);
