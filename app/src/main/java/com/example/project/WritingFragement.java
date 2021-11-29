@@ -296,6 +296,7 @@ public class WritingFragement extends Fragment implements View.OnClickListener{
 
     }
 
+    // 데이터 사용
     public void useData(ArrayList<String> arr, String temp) {
         tmptitle = temp;
         if(arr.contains(tmptitle.toString())){ // true면 db 안에 아이디가 존재하므로 중복 메시지 출력
