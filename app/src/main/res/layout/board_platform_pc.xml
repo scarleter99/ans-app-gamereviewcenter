@@ -78,13 +78,16 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
             android:orientation="vertical">
 
             <Button
                 android:id="@+id/btn_samplereview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="업로드된 글이 없습니다." />
+                android:background="#356577"
+                android:text="업로드된 글이 없습니다."
+                android:textColor="#FFFFFF"/>
         </LinearLayout>
 
     </LinearLayout>

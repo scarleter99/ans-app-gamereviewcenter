@@ -7,16 +7,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tv_selectboard"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:text="@string/TV_selectboard"
-        android:textColor="#FFFFFF" />
-
     <TableLayout
         android:id="@+id/layout_board_table"
         android:layout_width="319dp"

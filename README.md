@@ -1,8 +1,8 @@
 # 팀프로젝트 8조 - Readme 파일
-- 이름: 김태범(20181602), 강동우(), 김진명(20181599), 문민철(20181607)
+- 이름: 김태범(20181602), 강동우(20181566), 김진명(20181599), 문민철(20181607)
 
 - MainActivity 구현 내용:
-	- login(): 아이디와 비밀번호를 입력받고, FireStoreDB에 "user" doucument에서 아이디가 존재하는지 확인, 없으면 알림 메시지 출력
+	- 아이디와 비밀번호를 입력받고, FireStoreDB에 "user" doucument에서 아이디가 존재하는지 확인, 없으면 알림 메시지 출력
 	- 아이디가 존재할 경우, "pw"키 값이 입력받은 비밀번호와 일치하는지 확인, 일치하지 않으면 알림 메시지 출력
 	- 아이디, 비밀번호 모두 일치할 경우 로그인 성공, SecondActivity로 화면 이동
 	- 로그인 완료시 글쓰기 및 마이페이지에서 활용하기 위한 목적으로 로그인한 사람의 아이디를 프래퍼런스로 저장 
@@ -11,7 +11,6 @@
 - SecondActivity 구현 내용:
 	- 로그인 성공 시 첫 출력 화면을 게시판 페이지(BoardFragment)로 설정 
 	- bottomNavigationBar 기능 구현 (게시판, 글 작성, 마이 페이지 각각의 아이콘 클릭시 화면 전환)
-	- onBackPressed(): 뒤로가기 버튼 클릭 시 "로그아웃 하시겠습니까?" 알림 출력, '예' 클릭 시 로그아웃 메시지 출력과 함께 로그인 페이지로 이동
 	
 - SignUpActivity 구현 내용:
 	- idCheck(): 아이디 형식을 5~20자, 숫자와 소문자 조합으로 설정
@@ -30,13 +29,20 @@
 	- 회원가입 성공시 firebaseDB중 user에 각각의 입력 정보를 저장
 	
 - BoardFragment 구현 내용:
-	- a
+	- 로그인 성공 시 첫 출력 화면
+	- 6개의 각각의 버튼(PC/Mobile/Nintendo/PS/Xbox/Etc)을 통해 클릭 시 BoardPlatformActivity 6페이지 중 한 페이지로 이동
 	
-- BoardPlatformActivity 구현 내용:
-	- a
-	
+- BoardPlatformActivity(BoardPlatformPC/Mobile/Nintendo/PS/Xbox/EtcActivity) 구현 내용:
+	- firstButton: 아래의 글이 게임이름, 작성자, 제목 순으로 작성돼있다는 것을 알려주기 위해 생성한 버튼(눌러도 특별한 이벤트가 발생되지 않습니다.)
+	- btn_search: 검색버튼, setOnClickListener를 통해 누르면 et_search에 작성된 내용을 바탕으로 검색
+	- 후술할 getAllData()를 통해 각 플랫폼에 작성된 모든 글을 불러와 useData()를 통해 글의 갯수만큼 그 글에 해당하는 리뷰 페이지로 연결되는 동적 버튼 생성
+	- useData(): case 1 - 각 플랫폼 페이지 접속 시 사용 case2: 검색기능 사용시 사용
+	- putDatas(): useData() case 1,2의 btn에 쓰여진 text를 저장하여 이 정보를 활용하여 리뷰 페이지에 이에 해당되는 글을 작성하기 위한 메소드
+
 - BoardPlatformReviewActivity 구현 내용:
-	- a
+	- setPage(): 눌려진 버튼에 해당하는 데이터를 출력하기 위한 메소드
+	- 후술할 getData() 메서드를 tv_pl_re_platform에 쓰여진 플랫폼을 통해 데이터베이스의 collection에 접근, tv_platform_review_title을 통해 데이터베이스의 document에 접근
+	- 후술할 getImage() 메서드를 활용하여 글과 함께 업로드 된 이미지를 출력
 	
 - WritingFragment 구현 내용:
 	- 프래퍼런스에 저장한 아이디를 바탕으로 사용자의 닉네임을 불러와서 글쓴이로 설정
