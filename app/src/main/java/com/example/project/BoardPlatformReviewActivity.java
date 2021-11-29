@@ -69,6 +69,7 @@ public class BoardPlatformReviewActivity extends AppCompatActivity {
         rb_rating = findViewById(R.id.rb_rating);
         btn_reply = findViewById(R.id.btn_reply);
         db = FirebaseFirestore.getInstance();
+        pushtry = 0; //추천버튼 누른 횟수
 
         setPage();
         String platform = tv_pl_re_platform.getText().toString().trim();//플랫폼
@@ -82,9 +83,9 @@ public class BoardPlatformReviewActivity extends AppCompatActivity {
 
         btn_reply.setOnClickListener(new View.OnClickListener(){ // 추천 버튼을 눌렀을 때
             public void onClick(View v){
+                pushtry += 1;
                 if (pushtry < 1) {
                     updateData(platform, title, "recommend", recommendpush+1);//추천수 증가된 데이터 전달
-                    updateData(platform, title, "recommendtry", pushtry+1);//추천수 중복 방지 데이터 전달
                     getData(platform, title);
                 }
                 else {
@@ -169,10 +170,6 @@ public class BoardPlatformReviewActivity extends AppCompatActivity {
                 str1 = str1.replace("recommend=","");
                 tv_rating.setText("추천수 : "+str1);
                 recommendpush = Integer.parseInt(str1);
-            }
-            if (str1.contains("recommendtry=")){//추천수 중복 방지
-                str1 = str1.replace("recommendtry=","");
-                pushtry = Integer.parseInt(str1);
             }
         }
     }

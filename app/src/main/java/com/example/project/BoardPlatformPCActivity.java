@@ -136,8 +136,6 @@ public class BoardPlatformPCActivity extends AppCompatActivity {
                     j += 7;
                 } else if (str1.contains("recommend")){
 
-                } else if (str1.contains("recommendtry")){
-
                 } else {
                     str1 = str1.replace("title=","");
                     buttonText += str1;
