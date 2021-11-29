@@ -22,7 +22,9 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -43,6 +45,7 @@ import com.google.firebase.storage.UploadTask;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Timer;
 
 public class WritingFragement extends Fragment implements View.OnClickListener{
     FirebaseStorage st;
@@ -56,6 +59,8 @@ public class WritingFragement extends Fragment implements View.OnClickListener{
     Button btn_Done;
     EditText WR_title,WR_gametitle,WR_attr1,WR_attr2,WR_attr3,WR_attr4,WR_attr5,WR_attr6,WR_attr7,WR_attr8;
     SharedPreferences spref;
+    Boolean istitlecheck = false;
+    String tmptitle = "";
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -86,6 +91,60 @@ public class WritingFragement extends Fragment implements View.OnClickListener{
         return view;
     }
 
+    // 중복 체크 함수
+    private void doubleCheck(String collec, int num, String temp) {
+        ArrayList<String> arr = new ArrayList<>();
+        tmptitle = temp;
+        db.collection(collec)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) { //데이터를 arr에 삽입
+                        if (task.isSuccessful()) {
+                            switch (num) {
+                                case 0: // 글제목 중복 체크
+                                    for (QueryDocumentSnapshot document : task.getResult()) {
+                                        Log.d("제목 모두 읽기", document.getData().get("title").toString());
+                                        arr.add(document.getData().get("title").toString()); // arr에 모든 title 값 저장
+                                    }
+                                    if(arr.contains(tmptitle.toString())){ // true면 db 안에 글 제목이 존재하므로 중복 메시지 출력
+                                        Toast.makeText(getContext(), "사용불가능한 제목입니다.", Toast.LENGTH_SHORT).show();
+                                        Log.d("데이터 모두 읽기", "제목사용 불가능");
+                                        istitlecheck = false;
+                                    }
+                                    else {
+                                        Toast.makeText(getContext(), "사용가능한 제목입니다.", Toast.LENGTH_SHORT).show();
+                                        Log.d("데이터 모두 읽기", "제목사용 가능");
+                                        useData();
+                                    }
+                                    break;
+                            }
+
+                        }
+                    }
+                });
+    }
+
+    public void getTitleData(String collec, String title) {
+        ArrayList<String> arr = new ArrayList<>();
+        db.collection(collec)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                Log.d("데이터 모두 읽기", document.getId() + " => " + document.getData());
+                                arr.add(document.getData().get("title").toString());
+                            }
+                            useData(arr,title);
+                        } else {
+                            Log.d("데이터 모두 읽기", "Error getting documents: ", task.getException());
+                        }
+                    }
+                });
+    }
+
     public void onClick(View v) { //implements View.OnClickListener
         switch (v.getId()) {
             case R.id.iv_putplaytime:
@@ -95,67 +154,10 @@ public class WritingFragement extends Fragment implements View.OnClickListener{
                 imgLauncher.launch(intent);
                 break;
             case R.id.btn_done:
-                Map<String, Object> data = new HashMap<>();
                 String spn = spn_writing.getSelectedItem().toString();
-                Boolean isfill = false;
-                float rating = rb.getRating();
-                String gmtitle = WR_gametitle.getText().toString();
                 String title = WR_title.getText().toString();
-                String text = spref.getString("writer","");
-                data.put("title",title);
-                data.put("gametitle",gmtitle);
-                data.put("rating",rating);
-                data.put("writer",text);
-                putImage(title);
-                ArrayList<String> attr = new ArrayList<>();
-                if(WR_attr1.getText().toString().equals("")){
-                    attr.add("emptycontent"); }
-                else{
-                    attr.add(WR_attr1.getText().toString());
-                    isfill = true;}
-                if(WR_attr2.getText().toString().equals("")){
-                    attr.add("emptycontent"); }
-                else{
-                    attr.add(WR_attr2.getText().toString());
-                    isfill = true;}
-                if(WR_attr3.getText().toString().equals("")){
-                    attr.add("emptycontent"); }
-                else{
-                    attr.add(WR_attr3.getText().toString());
-                    isfill = true;}
-                if(WR_attr4.getText().toString().equals("")){
-                    attr.add("emptycontent"); }
-                else{
-                    attr.add(WR_attr4.getText().toString());
-                    isfill = true;}
-                if(WR_attr5.getText().toString().equals("")){
-                    attr.add("emptycontent"); }
-                else{
-                    attr.add(WR_attr5.getText().toString());
-                    isfill = true;}
-                if(WR_attr6.getText().toString().equals("")){
-                    attr.add("emptycontent"); }
-                else{
-                    attr.add(WR_attr6.getText().toString());
-                    isfill = true;}
-                if(WR_attr7.getText().toString().equals("")){
-                    attr.add("emptycontent"); }
-                else{
-                    attr.add(WR_attr7.getText().toString());
-                    isfill = true;}
-                if(WR_attr8.getText().toString().equals("")){
-                    attr.add("emptycontent"); }
-                else{
-                    attr.add(WR_attr8.getText().toString());
-                    isfill = true;}
-                data.put("attribute",attr);
-                if(isfill){
-                    putData(spn,title,data);
-                }
-                else{
-                    Toast.makeText(getContext(),"내용을 한칸이라도 입력해주세요!",Toast.LENGTH_SHORT).show();
-                }
-                break;
+                getTitleData(spn,title);
+
         }
     }
 
@@ -287,6 +289,92 @@ public class WritingFragement extends Fragment implements View.OnClickListener{
         switch (what) {
             case 1:
                 // 사용하지않는코드
+        }
+    }
+
+    public void useData() {
+
+    }
+
+    public void useData(ArrayList<String> arr, String temp) {
+        tmptitle = temp;
+        if(arr.contains(tmptitle.toString())){ // true면 db 안에 아이디가 존재하므로 중복 메시지 출력
+            Toast.makeText(getContext(), "사용 불가능한 제목입니다.", Toast.LENGTH_SHORT).show();
+            istitlecheck = false;
+        }
+        else{
+            Toast.makeText(getContext(), "사용 가능한 제목입니다.", Toast.LENGTH_SHORT).show();
+            istitlecheck = true;
+        }
+        Map<String, Object> data = new HashMap<>();
+        String spn = spn_writing.getSelectedItem().toString();
+        Boolean isfill = false;
+        float rating = rb.getRating();
+        String gmtitle = WR_gametitle.getText().toString();
+        String title = WR_title.getText().toString();
+        String writer = spref.getString("writer","");
+        data.put("writer",writer);
+        data.put("rating",rating);
+        //data.put("recommend","0");
+        putImage(title);
+        ArrayList<String> attr = new ArrayList<>();
+        if(WR_attr1.getText().toString().equals("")){
+            attr.add("emptycontent"); }
+        else{
+            attr.add(WR_attr1.getText().toString());
+            isfill = true;}
+        if(WR_attr2.getText().toString().equals("")){
+            attr.add("emptycontent"); }
+        else{
+            attr.add(WR_attr2.getText().toString());
+            isfill = true;}
+        if(WR_attr3.getText().toString().equals("")){
+            attr.add("emptycontent"); }
+        else{
+            attr.add(WR_attr3.getText().toString());
+            isfill = true;}
+        if(WR_attr4.getText().toString().equals("")){
+            attr.add("emptycontent"); }
+        else{
+            attr.add(WR_attr4.getText().toString());
+            isfill = true;}
+        if(WR_attr5.getText().toString().equals("")){
+            attr.add("emptycontent"); }
+        else{
+            attr.add(WR_attr5.getText().toString());
+            isfill = true;}
+        if(WR_attr6.getText().toString().equals("")){
+            attr.add("emptycontent"); }
+        else{
+            attr.add(WR_attr6.getText().toString());
+            isfill = true;}
+        if(WR_attr7.getText().toString().equals("")){
+            attr.add("emptycontent"); }
+        else{
+            attr.add(WR_attr7.getText().toString());
+            isfill = true;}
+        if(WR_attr8.getText().toString().equals("")){
+            attr.add("emptycontent"); }
+        else{
+            attr.add(WR_attr8.getText().toString());
+            isfill = true;}
+        if(WR_title.getText().toString().equals("")){
+            Toast.makeText(getContext(),"제목을 입력해 주세요",Toast.LENGTH_SHORT).show();}
+        else{
+            data.put("title",title);
+            isfill = true;}
+        if(WR_gametitle.getText().toString().equals("")){
+            Toast.makeText(getContext(),"게임이름을 입력해 주세요",Toast.LENGTH_SHORT).show();}
+        else{
+            data.put("gametitle",gmtitle);
+            isfill = true;}
+        data.put("attribute",attr);
+        Boolean finchk = istitlecheck;
+        if(isfill&&finchk){
+            putData(spn,title,data);
+        }
+        else if(!isfill){
+            Toast.makeText(getContext(),"내용을 한칸이라도 입력해주세요!",Toast.LENGTH_SHORT).show();
         }
     }
 

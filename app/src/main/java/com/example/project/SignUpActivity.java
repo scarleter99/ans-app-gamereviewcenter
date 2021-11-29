@@ -210,7 +210,7 @@ public class SignUpActivity extends AppCompatActivity {
                                         Log.d("닉네임 모두 읽기", document.getData().get("nickname").toString());
                                         arr.add(document.getData().get("nickname").toString()); // 닉네임 키 값의 모든 데이터를 arr에 저장
                                     }
-                                    if(arr.contains(et_nickname.getText().toString())){ // true면 db 안에 아이디가 존재하므로 중복 메시지 출력
+                                    if(arr.contains(tmpnick)){ // true면 db 안에 아이디가 존재하므로 중복 메시지 출력
                                         Toast.makeText(getApplicationContext(), "중복된 닉네임입니다.", Toast.LENGTH_SHORT).show();
                                         isnicknamecheck = false;
                                     }
