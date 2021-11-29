@@ -95,56 +95,66 @@ public class WritingFragement extends Fragment implements View.OnClickListener{
                 imgLauncher.launch(intent);
                 break;
             case R.id.btn_done:
-                putImage("review1"); //샘플코드
+                putImage("review1");
                 Map<String, Object> data = new HashMap<>();
                 String spn = spn_writing.getSelectedItem().toString();
-                float f_rating = rb.getRating();
+                Boolean isfill = false;
+                float rating = rb.getRating();
                 String gmtitle = WR_gametitle.getText().toString();
-                Log.d("데이터 읽기", "1");
                 String title = WR_title.getText().toString();
-                Log.d("데이터 읽기", "2");
                 String text = spref.getString("writer","");
-                Log.d("데이터 읽기", "3");
                 data.put("title",title);
-                Log.d("데이터 읽기", "4");
                 data.put("gametitle",gmtitle);
-                data.put("rating",f_rating);
+                data.put("rating",rating);
                 data.put("writer",text);
                 ArrayList<String> attr = new ArrayList<>();
                 if(WR_attr1.getText().toString().equals("")){
                     attr.add("emptycontent"); }
                 else{
-                    attr.add(WR_attr1.getText().toString()); }
+                    attr.add(WR_attr1.getText().toString());
+                    isfill = true;}
                 if(WR_attr2.getText().toString().equals("")){
                     attr.add("emptycontent"); }
                 else{
-                    attr.add(WR_attr2.getText().toString()); }
+                    attr.add(WR_attr2.getText().toString());
+                    isfill = true;}
                 if(WR_attr3.getText().toString().equals("")){
                     attr.add("emptycontent"); }
                 else{
-                    attr.add(WR_attr3.getText().toString()); }
+                    attr.add(WR_attr3.getText().toString());
+                    isfill = true;}
                 if(WR_attr4.getText().toString().equals("")){
                     attr.add("emptycontent"); }
                 else{
-                    attr.add(WR_attr4.getText().toString()); }
+                    attr.add(WR_attr4.getText().toString());
+                    isfill = true;}
                 if(WR_attr5.getText().toString().equals("")){
                     attr.add("emptycontent"); }
                 else{
-                    attr.add(WR_attr5.getText().toString()); }
+                    attr.add(WR_attr5.getText().toString());
+                    isfill = true;}
                 if(WR_attr6.getText().toString().equals("")){
                     attr.add("emptycontent"); }
                 else{
-                    attr.add(WR_attr6.getText().toString()); }
+                    attr.add(WR_attr6.getText().toString());
+                    isfill = true;}
                 if(WR_attr7.getText().toString().equals("")){
                     attr.add("emptycontent"); }
                 else{
-                    attr.add(WR_attr7.getText().toString()); }
+                    attr.add(WR_attr7.getText().toString());
+                    isfill = true;}
                 if(WR_attr8.getText().toString().equals("")){
                     attr.add("emptycontent"); }
                 else{
-                    attr.add(WR_attr8.getText().toString()); }
+                    attr.add(WR_attr8.getText().toString());
+                    isfill = true;}
                 data.put("attribute",attr);
-                putData(spn,title,data);
+                if(isfill){
+                    putData(spn,title,data);
+                }
+                else{
+                    Toast.makeText(getContext(),"내용을 한칸이라도 입력해주세요!",Toast.LENGTH_SHORT).show();
+                }
                 break;
         }
     }
@@ -276,7 +286,7 @@ public class WritingFragement extends Fragment implements View.OnClickListener{
     public void useData(Map<String, Object> data, int what) {
         switch (what) {
             case 1:
-                //TV_sample.setText(data.toString()); // 샘플코드
+                // 사용하지않는코드
         }
     }
 
@@ -285,7 +295,7 @@ public class WritingFragement extends Fragment implements View.OnClickListener{
     public void useData(ArrayList<Map<String, Object>> data, int what) {
         switch (what) {
             case 1:
-                //TV_sample.setText(data.toString()); // 샘플코드
+                // 사용하지않는코드
         }
     }
 }
