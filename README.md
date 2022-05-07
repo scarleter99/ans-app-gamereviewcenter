@@ -1,6 +1,14 @@
-# 팀프로젝트 8조 - Readme 파일
-- 이름: 김태범(20181602), 강동우(20181566), 김진명(20181599), 문민철(20181607)
+# App : 게임 리뷰 센터 (Game Review Center)
+Game Review Center is a simple and free game review app.
 
+# Screenshot :
+
+![image](https://user-images.githubusercontent.com/84405002/167259048-696e7be6-e9a6-4373-9ff7-70afedf34af1.png)
+![image](https://user-images.githubusercontent.com/84405002/167259104-72a7dd07-dcf8-4510-af1e-0b0e20323996.png)
+![image](https://user-images.githubusercontent.com/84405002/167259111-bb2a8d58-ca4a-42d6-aaed-a88715177fc2.png)
+![image](https://user-images.githubusercontent.com/84405002/167259116-a0f94ea2-79e9-41c6-82cb-bad9273e5d1b.png)
+
+# Implementation
 - MainActivity 구현 내용:
 	- 아이디와 비밀번호를 입력받고, FireStoreDB에 "user" doucument에서 아이디가 존재하는지 확인, 없으면 알림 메시지 출력
 	- 아이디가 존재할 경우, "pw"키 값이 입력받은 비밀번호와 일치하는지 확인, 일치하지 않으면 알림 메시지 출력
@@ -79,3 +87,10 @@
 - 실행환경:
 	- SDK 버전: Android 11(R)
 	- AVD: Pixel 2 API 30(Target: Android 11.0(Google Play), CPU/ABI: x86/64)
+
+# Contributers :
+- @hanwhachickens
+- @xoqja99
+- @vxbdfsg
+- @JinMyeong-Kim-Kr
+
