@@ -90,7 +90,7 @@ Game Review Center is a simple and free game review app.
 
 # Contributers :
 - @hanwhachickens
-- @xoqja99
+- @scarleter99 
 - @vxbdfsg
 - @JinMyeong-Kim-Kr
 
